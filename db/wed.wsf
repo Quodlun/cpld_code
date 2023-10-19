@@ -54,7 +54,7 @@ VECTOR("C:/Users/User/Desktop/cpld_code/db/cpld_code.sim.cvwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "C";
+		SIGNAL = "Ci";
 		INDEX = 2;
 		FORMAT = E;
 		SCALE = 1;
@@ -64,6 +64,14 @@ VECTOR("C:/Users/User/Desktop/cpld_code/db/cpld_code.sim.cvwf")
 	LINE{
 		SIGNAL = "S";
 		INDEX = 3;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "Co";
+		INDEX = 4;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;

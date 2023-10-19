@@ -1,5 +1,5 @@
 Fitter report for cpld_code
-Thu Oct 19 11:17:33 2023
+Thu Oct 19 11:41:26 2023
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -53,7 +53,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------+
 ; Fitter Summary                                                       ;
 +-----------------------+----------------------------------------------+
-; Fitter Status         ; Successful - Thu Oct 19 11:17:32 2023        ;
+; Fitter Status         ; Successful - Thu Oct 19 11:41:26 2023        ;
 ; Quartus II Version    ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name         ; cpld_code                                    ;
 ; Top-level Entity Name ; cpld_code                                    ;
@@ -61,7 +61,7 @@ applicable agreement for further details.
 ; Device                ; EPM1270T144C5                                ;
 ; Timing Models         ; Final                                        ;
 ; Total logic elements  ; 2 / 1,270 ( < 1 % )                          ;
-; Total pins            ; 4 / 116 ( 3 % )                              ;
+; Total pins            ; 5 / 116 ( 4 % )                              ;
 ; Total virtual pins    ; 0                                            ;
 ; UFM blocks            ; 0 / 1 ( 0 % )                                ;
 +-----------------------+----------------------------------------------+
@@ -147,8 +147,8 @@ The pin-out file can be found in C:/Users/User/Desktop/cpld_code/cpld_code.pin.
 ;                                             ;                     ;
 ; Logic element usage by number of LUT inputs ;                     ;
 ;     -- 4 input functions                    ; 0                   ;
-;     -- 3 input functions                    ; 0                   ;
-;     -- 2 input functions                    ; 2                   ;
+;     -- 3 input functions                    ; 2                   ;
+;     -- 2 input functions                    ; 0                   ;
 ;     -- 1 input functions                    ; 0                   ;
 ;     -- 0 input functions                    ; 0                   ;
 ;                                             ;                     ;
@@ -165,7 +165,7 @@ The pin-out file can be found in C:/Users/User/Desktop/cpld_code/cpld_code.pin.
 ; Logic elements in carry chains              ; 0                   ;
 ; User inserted logic elements                ; 0                   ;
 ; Virtual pins                                ; 0                   ;
-; I/O pins                                    ; 4 / 116 ( 3 % )     ;
+; I/O pins                                    ; 5 / 116 ( 4 % )     ;
 ;     -- Clock pins                           ; 0 / 4 ( 0 % )       ;
 ; Global signals                              ; 0                   ;
 ; UFM blocks                                  ; 0 / 1 ( 0 % )       ;
@@ -177,8 +177,8 @@ The pin-out file can be found in C:/Users/User/Desktop/cpld_code/cpld_code.pin.
 ; Maximum fan-out                             ; 2                   ;
 ; Highest non-global fan-out signal           ; A                   ;
 ; Highest non-global fan-out                  ; 2                   ;
-; Total fan-out                               ; 6                   ;
-; Average fan-out                             ; 1.00                ;
+; Total fan-out                               ; 8                   ;
+; Average fan-out                             ; 1.14                ;
 +---------------------------------------------+---------------------+
 
 
@@ -187,8 +187,9 @@ The pin-out file can be found in C:/Users/User/Desktop/cpld_code/cpld_code.pin.
 +------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
 ; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Location assigned by ;
 +------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
-; A    ; 1     ; 1        ; 0            ; 10           ; 2           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
-; B    ; 108   ; 3        ; 17           ; 10           ; 4           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
+; A    ; 3     ; 1        ; 0            ; 10           ; 5           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
+; B    ; 122   ; 2        ; 10           ; 11           ; 2           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
+; Ci   ; 137   ; 2        ; 6            ; 11           ; 3           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
 +------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
 
 
@@ -197,8 +198,8 @@ The pin-out file can be found in C:/Users/User/Desktop/cpld_code/cpld_code.pin.
 +------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
 ; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Slow Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Fast Output Connection ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
 +------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
-; C    ; 61    ; 4        ; 10           ; 3            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
-; S    ; 6     ; 1        ; 0            ; 9            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; Co   ; 39    ; 4        ; 2            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; S    ; 24    ; 1        ; 0            ; 6            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; Fitter               ; 10 pF ; -                    ; -                   ;
 +------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
 
 
@@ -208,8 +209,8 @@ The pin-out file can be found in C:/Users/User/Desktop/cpld_code/cpld_code.pin.
 ; I/O Bank ; Usage          ; VCCIO Voltage ; VREF Voltage ;
 +----------+----------------+---------------+--------------+
 ; 1        ; 2 / 26 ( 8 % ) ; 3.3V          ; --           ;
-; 2        ; 0 / 30 ( 0 % ) ; 3.3V          ; --           ;
-; 3        ; 1 / 30 ( 3 % ) ; 3.3V          ; --           ;
+; 2        ; 2 / 30 ( 7 % ) ; 3.3V          ; --           ;
+; 3        ; 0 / 30 ( 0 % ) ; 3.3V          ; --           ;
 ; 4        ; 1 / 30 ( 3 % ) ; 3.3V          ; --           ;
 +----------+----------------+---------------+--------------+
 
@@ -219,12 +220,12 @@ The pin-out file can be found in C:/Users/User/Desktop/cpld_code/cpld_code.pin.
 +----------+------------+----------+----------------+--------+--------------+-----------+------------+-----------------+----------+--------------+
 ; Location ; Pad Number ; I/O Bank ; Pin Name/Usage ; Dir.   ; I/O Standard ; Voltage   ; I/O Type   ; User Assignment ; Bus Hold ; Weak Pull Up ;
 +----------+------------+----------+----------------+--------+--------------+-----------+------------+-----------------+----------+--------------+
-; 1        ; 2          ; 1        ; A              ; input  ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
+; 1        ; 2          ; 1        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 2        ; 3          ; 1        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
-; 3        ; 5          ; 1        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 3        ; 5          ; 1        ; A              ; input  ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
 ; 4        ; 7          ; 1        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 5        ; 9          ; 1        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
-; 6        ; 10         ; 1        ; S              ; output ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
+; 6        ; 10         ; 1        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 7        ; 14         ; 1        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 8        ; 15         ; 1        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 9        ;            ; 1        ; VCCIO1         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
@@ -242,7 +243,7 @@ The pin-out file can be found in C:/Users/User/Desktop/cpld_code/cpld_code.pin.
 ; 21       ; 28         ; 1        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 22       ; 29         ; 1        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 23       ; 30         ; 1        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
-; 24       ; 31         ; 1        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 24       ; 31         ; 1        ; S              ; output ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
 ; 25       ;            ; 1        ; VCCIO1         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
 ; 26       ;            ;          ; GNDIO          ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
 ; 27       ; 33         ; 1        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
@@ -257,7 +258,7 @@ The pin-out file can be found in C:/Users/User/Desktop/cpld_code/cpld_code.pin.
 ; 36       ; 53         ; 1        ; #TDO           ; output ;              ;           ; --         ;                 ; --       ; --           ;
 ; 37       ; 56         ; 4        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 38       ; 57         ; 4        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
-; 39       ; 60         ; 4        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 39       ; 60         ; 4        ; Co             ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
 ; 40       ; 62         ; 4        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 41       ; 63         ; 4        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 42       ; 67         ; 4        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
@@ -279,7 +280,7 @@ The pin-out file can be found in C:/Users/User/Desktop/cpld_code/cpld_code.pin.
 ; 58       ; 83         ; 4        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 59       ; 84         ; 4        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 60       ; 85         ; 4        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
-; 61       ; 86         ; 4        ; C              ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 61       ; 86         ; 4        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 62       ; 87         ; 4        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 63       ; 88         ; 4        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 64       ;            ; 4        ; VCCIO4         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
@@ -326,7 +327,7 @@ The pin-out file can be found in C:/Users/User/Desktop/cpld_code/cpld_code.pin.
 ; 105      ; 152        ; 3        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 106      ; 154        ; 3        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 107      ; 156        ; 3        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
-; 108      ; 158        ; 3        ; B              ; input  ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
+; 108      ; 158        ; 3        ; GND*           ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 109      ; 164        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 110      ; 165        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 111      ; 166        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
@@ -340,7 +341,7 @@ The pin-out file can be found in C:/Users/User/Desktop/cpld_code/cpld_code.pin.
 ; 119      ; 182        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 120      ; 183        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 121      ; 184        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
-; 122      ; 185        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 122      ; 185        ; 2        ; B              ; input  ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
 ; 123      ; 186        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 124      ; 187        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 125      ; 188        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
@@ -355,7 +356,7 @@ The pin-out file can be found in C:/Users/User/Desktop/cpld_code/cpld_code.pin.
 ; 134      ; 195        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 135      ;            ;          ; GNDIO          ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
 ; 136      ;            ; 2        ; VCCIO2         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
-; 137      ; 199        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 137      ; 199        ; 2        ; Ci             ; input  ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
 ; 138      ; 200        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 139      ; 201        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 140      ; 204        ; 2        ; GND*           ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
@@ -389,7 +390,7 @@ Note: User assignments will override these defaults. The user specified values a
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
-; |cpld_code                 ; 2 (2)       ; 0            ; 0          ; 4    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpld_code          ; work         ;
+; |cpld_code                 ; 2 (2)       ; 0            ; 0          ; 5    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpld_code          ; work         ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -401,8 +402,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+----------+---------------+
 ; A    ; Input    ; (0)           ;
 ; B    ; Input    ; (0)           ;
+; Ci   ; Input    ; (0)           ;
 ; S    ; Output   ; --            ;
-; C    ; Output   ; --            ;
+; Co   ; Output   ; --            ;
 +------+----------+---------------+
 
 
@@ -411,9 +413,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+--------------------------+
 ; Name ; Fan-Out                  ;
 +------+--------------------------+
+; Ci   ; 2                        ;
 ; B    ; 2                        ;
 ; A    ; 2                        ;
-; C~0  ; 1                        ;
+; Co~0 ; 1                        ;
 ; S~0  ; 1                        ;
 +------+--------------------------+
 
@@ -423,13 +426,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------+---------------------+
 ; Interconnect Resource Type ; Usage               ;
 +----------------------------+---------------------+
-; C4s                        ; 3 / 2,870 ( < 1 % ) ;
+; C4s                        ; 6 / 2,870 ( < 1 % ) ;
 ; Direct links               ; 0 / 3,938 ( 0 % )   ;
 ; Global clocks              ; 0 / 4 ( 0 % )       ;
 ; LAB clocks                 ; 0 / 72 ( 0 % )      ;
 ; LUT chains                 ; 0 / 1,143 ( 0 % )   ;
-; Local interconnects        ; 5 / 3,938 ( < 1 % ) ;
-; R4s                        ; 8 / 2,832 ( < 1 % ) ;
+; Local interconnects        ; 4 / 3,938 ( < 1 % ) ;
+; R4s                        ; 3 / 2,832 ( < 1 % ) ;
 +----------------------------+---------------------+
 
 
@@ -476,11 +479,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 2.00) ; Number of LABs  (Total = 1) ;
+; Number of Distinct Inputs  (Average = 3.00) ; Number of LABs  (Total = 1) ;
 +---------------------------------------------+-----------------------------+
 ; 0                                           ; 0                           ;
 ; 1                                           ; 0                           ;
-; 2                                           ; 1                           ;
+; 2                                           ; 0                           ;
+; 3                                           ; 1                           ;
 +---------------------------------------------+-----------------------------+
 
 
@@ -512,7 +516,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Thu Oct 19 11:17:30 2023
+    Info: Processing started: Thu Oct 19 11:41:25 2023
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off cpld_code -c cpld_code
 Info: Selected device EPM1270T144C5 for design "cpld_code"
 Info: Low junction temperature is 0 degrees C
@@ -525,11 +529,12 @@ Info: Device migration not selected. If you intend to use device migration later
     Info: Device EPM570T144A5 is compatible
     Info: Device EPM1270T144I5 is compatible
     Info: Device EPM1270T144A5 is compatible
-Critical Warning: No exact pin location assignment(s) for 4 pins of 4 total pins
+Critical Warning: No exact pin location assignment(s) for 5 pins of 5 total pins
     Info: Pin S not assigned to an exact location on the device
-    Info: Pin C not assigned to an exact location on the device
+    Info: Pin Co not assigned to an exact location on the device
     Info: Pin A not assigned to an exact location on the device
     Info: Pin B not assigned to an exact location on the device
+    Info: Pin Ci not assigned to an exact location on the device
 Info: Timing-driven compilation is using the Classic Timing Analyzer
 Info: Timing requirements not specified -- optimizing circuit to achieve the following default global requirements
     Info: Assuming a global fmax requirement of 1000 MHz
@@ -548,7 +553,7 @@ Info: Finished processing fast register assignments
 Extra Info: Finished moving registers into LUTs: elapsed time is 00:00:00
 Info: Finished register packing
 Info: Statistics of I/O pins that need to be placed that use the same VCCIO and VREF, before I/O pin placement
-    Info: Number of I/O pins in group: 4 (unused VREF, 3.3V VCCIO, 2 input, 2 output, 0 bidirectional)
+    Info: Number of I/O pins in group: 5 (unused VREF, 3.3V VCCIO, 3 input, 2 output, 0 bidirectional)
         Info: I/O standards used: 3.3-V LVTTL.
 Info: I/O bank details before I/O pin placement
     Info: Statistics of I/O banks
@@ -556,18 +561,18 @@ Info: I/O bank details before I/O pin placement
         Info: I/O bank number 2 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  30 pins available
         Info: I/O bank number 3 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  30 pins available
         Info: I/O bank number 4 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  30 pins available
-Info: Fitter preparation operations ending: elapsed time is 00:00:01
+Info: Fitter preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement preparation operations beginning
 Info: Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement operations beginning
 Info: Fitter placement was successful
 Info: Fitter placement operations ending: elapsed time is 00:00:00
-Info: Estimated most critical path is pin to pin delay of 11.339 ns
-    Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_108; Fanout = 2; PIN Node = 'B'
-    Info: 2: + IC(3.400 ns) + CELL(0.740 ns) = 5.272 ns; Loc. = LAB_X2_Y10; Fanout = 1; COMB Node = 'C~0'
-    Info: 3: + IC(3.745 ns) + CELL(2.322 ns) = 11.339 ns; Loc. = PIN_61; Fanout = 0; PIN Node = 'C'
-    Info: Total cell delay = 4.194 ns ( 36.99 % )
-    Info: Total interconnect delay = 7.145 ns ( 63.01 % )
+Info: Estimated most critical path is pin to pin delay of 10.290 ns
+    Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_122; Fanout = 2; PIN Node = 'B'
+    Info: 2: + IC(4.263 ns) + CELL(0.740 ns) = 6.135 ns; Loc. = LAB_X1_Y6; Fanout = 1; COMB Node = 'Co~0'
+    Info: 3: + IC(1.833 ns) + CELL(2.322 ns) = 10.290 ns; Loc. = PIN_39; Fanout = 0; PIN Node = 'Co'
+    Info: Total cell delay = 4.194 ns ( 40.76 % )
+    Info: Total interconnect delay = 6.096 ns ( 59.24 % )
 Info: Fitter routing operations beginning
 Info: Average interconnect usage is 0% of the available device resources
     Info: Peak interconnect usage is 0% of the available device resources in the region that extends from location X0_Y0 to location X8_Y11
@@ -578,8 +583,8 @@ Info: The Fitter performed an Auto Fit compilation.  Optimizations were skipped 
 Warning: The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info: Quartus II Fitter was successful. 0 errors, 3 warnings
     Info: Peak virtual memory: 252 megabytes
-    Info: Processing ended: Thu Oct 19 11:17:33 2023
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:00
+    Info: Processing ended: Thu Oct 19 11:41:26 2023
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 
