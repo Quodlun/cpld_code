@@ -1,9 +1,14 @@
 |cpld_code
 X => D.IN0
-X => B.IN0
+X => Bo.IN0
+X => Bo.IN0
 Y => D.IN1
-Y => B.IN1
+Y => Bo.IN1
+Y => Bo.IN0
+Bi => D.IN1
+Bi => Bo.IN1
+Bi => Bo.IN1
 D <= D.DB_MAX_OUTPUT_PORT_TYPE
-B <= B.DB_MAX_OUTPUT_PORT_TYPE
+Bo <= Bo.DB_MAX_OUTPUT_PORT_TYPE
 
 

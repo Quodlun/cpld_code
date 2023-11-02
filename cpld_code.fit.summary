@@ -1,4 +1,4 @@
-Fitter Status : Successful - Thu Nov 02 10:18:24 2023
+Fitter Status : Successful - Thu Nov 02 10:29:19 2023
 Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
 Revision Name : cpld_code
 Top-level Entity Name : cpld_code
@@ -6,6 +6,6 @@ Family : MAX II
 Device : EPM1270T144C5
 Timing Models : Final
 Total logic elements : 2 / 1,270 ( < 1 % )
-Total pins : 4 / 116 ( 3 % )
+Total pins : 5 / 116 ( 4 % )
 Total virtual pins : 0
 UFM blocks : 0 / 1 ( 0 % )

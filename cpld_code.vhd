@@ -8,16 +8,21 @@ port
 (
 	X	: in std_logic;
 	Y	: in std_logic;
+	Bi	: in std_logic;
 	
 	D	: out std_logic;
-	B	: out std_logic
+	Bo	: out std_logic
 );
 
 end cpld_code;
 
 architecture df of cpld_code is
 begin
-	D <= X XOR Y;
-	B <= ( NOT X ) AND Y;	
+	process ( X, Y, Bi )
 	
+	begin
+		D <= X XOR Y XOR Bi;
+		Bo <= ( ( NOT X ) AND Y ) OR ( ( NOT X) AND Bi ) OR ( Y AND Bi );	
+	
+	end process;
 end df;
