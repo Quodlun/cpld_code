@@ -38,7 +38,7 @@ VECTOR("C:/Users/User/Desktop/cpld_code/db/cpld_code.sim.cvwf")
 		INTERVAL_TYPE = HALF_GRID;
 	}
 	LINE{
-		SIGNAL = "A";
+		SIGNAL = "B";
 		INDEX = 0;
 		FORMAT = E;
 		SCALE = 1;
@@ -46,7 +46,7 @@ VECTOR("C:/Users/User/Desktop/cpld_code/db/cpld_code.sim.cvwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "B";
+		SIGNAL = "D";
 		INDEX = 1;
 		FORMAT = E;
 		SCALE = 1;
@@ -54,7 +54,7 @@ VECTOR("C:/Users/User/Desktop/cpld_code/db/cpld_code.sim.cvwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "Ci";
+		SIGNAL = "X";
 		INDEX = 2;
 		FORMAT = E;
 		SCALE = 1;
@@ -62,16 +62,8 @@ VECTOR("C:/Users/User/Desktop/cpld_code/db/cpld_code.sim.cvwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "S";
+		SIGNAL = "Y";
 		INDEX = 3;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "Co";
-		INDEX = 4;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;

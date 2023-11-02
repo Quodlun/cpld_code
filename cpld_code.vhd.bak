@@ -19,6 +19,6 @@ end cpld_code;
 architecture df of cpld_code is
 begin
 	S <= A XOR B XOR Ci;
-	Co <= A AND B OR B AND Ci OR A AND Ci;	
+	Co <= ( A AND B ) OR ( B AND Ci ) OR ( A AND Ci );	
 	
 end df;

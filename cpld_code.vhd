@@ -6,19 +6,18 @@ use ieee.std_logic_arith.all;
 entity cpld_code is
 port
 (
-	A	: in std_logic;
-	B	: in std_logic;
-	Ci	: in std_logic;
+	X	: in std_logic;
+	Y	: in std_logic;
 	
-	S	: out std_logic;
-	Co	: out std_logic
+	D	: out std_logic;
+	B	: out std_logic
 );
 
 end cpld_code;
 
 architecture df of cpld_code is
 begin
-	S <= A XOR B XOR Ci;
-	Co <= ( A AND B ) OR ( B AND Ci ) OR ( A AND Ci );	
+	D <= X XOR Y;
+	B <= ( NOT X ) AND Y;	
 	
 end df;
