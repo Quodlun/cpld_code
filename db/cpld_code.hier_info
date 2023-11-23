@@ -1,14 +1,32 @@
 |cpld_code
-X => D.IN0
-X => Bo.IN0
-X => Bo.IN0
-Y => D.IN1
-Y => Bo.IN1
-Y => Bo.IN0
-Bi => D.IN1
-Bi => Bo.IN1
-Bi => Bo.IN1
-D <= D.DB_MAX_OUTPUT_PORT_TYPE
-Bo <= Bo.DB_MAX_OUTPUT_PORT_TYPE
+sw_in[0] => bcd.DATAA
+sw_in[1] => bcd.OUTPUTSELECT
+sw_in[1] => bcd.DATAA
+sw_in[2] => bcd.OUTPUTSELECT
+sw_in[2] => bcd.OUTPUTSELECT
+sw_in[3] => bcd.OUTPUTSELECT
+sw_in[3] => bcd.OUTPUTSELECT
+sw_in[3] => bcd.DATAA
+sw_in[4] => bcd.OUTPUTSELECT
+sw_in[4] => bcd.OUTPUTSELECT
+sw_in[4] => bcd.OUTPUTSELECT
+sw_in[5] => bcd.OUTPUTSELECT
+sw_in[5] => bcd.OUTPUTSELECT
+sw_in[5] => bcd.OUTPUTSELECT
+sw_in[6] => bcd.OUTPUTSELECT
+sw_in[6] => bcd.OUTPUTSELECT
+sw_in[6] => bcd.OUTPUTSELECT
+sw_in[7] => bcd.OUTPUTSELECT
+sw_in[7] => bcd.OUTPUTSELECT
+sw_in[7] => bcd.OUTPUTSELECT
+sw_in[7] => bcd.DATAA
+sw_in[8] => bcd.OUTPUTSELECT
+sw_in[8] => bcd.OUTPUTSELECT
+sw_in[8] => bcd.OUTPUTSELECT
+sw_in[8] => bcd.OUTPUTSELECT
+bcd[0] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[1] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[2] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[3] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
 
 

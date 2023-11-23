@@ -22,7 +22,7 @@ begin
 	
 	begin
 		D <= X XOR Y XOR Bi;
-		B <= ( ( NOT X ) AND Y ) OR ( ( NOT X) AND Bi ) OR ( Y AND Bi );	
+		Bo <= ( ( NOT X ) AND Y ) OR ( ( NOT X) AND Bi ) OR ( Y AND Bi );	
 	
 	end process;
 end df;
