@@ -6,23 +6,27 @@ use ieee.std_logic_arith.all;
 entity cpld_code is
 port
 (
-	sw_in	: in std_logic_vector ( 8 downto 0 );
+	bcd		: in std_logic_vector ( 3 downto 0 );
 	
-	bcd		: out std_logic_vector ( 3 downto 0 )
+	scan	: out std_logic;
+	seg_out	: out std_logic_vector ( 7 downto 0 )
 );
 
 end cpld_code;
 
-architecture df of cpld_code is
+architecture beh of cpld_code is
 begin
-	bcd <= "1001" when ( sw_in ( 8 ) = '1' ) else
-		   "1000" when ( sw_in ( 7 ) = '1' ) else
-		   "0111" when ( sw_in ( 6 ) = '1' ) else
-		   "0110" when ( sw_in ( 5 ) = '1' ) else
-		   "0101" when ( sw_in ( 4 ) = '1' ) else
-		   "0100" when ( sw_in ( 3 ) = '1' ) else
-		   "0011" when ( sw_in ( 2 ) = '1' ) else
-		   "0010" when ( sw_in ( 1 ) = '1' ) else
-		   "0001" when ( sw_in ( 0 ) = '1' ) else
-		   "0000";
-end df;
+	scan <= '1';
+	
+	seg_out <= "01101111" when ( bcd = 9 ) else
+			   "01111111" when ( bcd = 8 ) else
+			   "00000111" when ( bcd = 7 ) else
+			   "01111101" when ( bcd = 6 ) else
+			   "01101101" when ( bcd = 5 ) else
+			   "01100110" when ( bcd = 4 ) else
+			   "01001111" when ( bcd = 3 ) else
+			   "01011011" when ( bcd = 2 ) else
+			   "00000110" when ( bcd = 1 ) else
+			   "01111001" when ( bcd > 9 ) else
+			   "00111111";
+end beh;

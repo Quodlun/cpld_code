@@ -1,5 +1,5 @@
 Flow report for cpld_code
-Thu Nov 23 10:35:32 2023
+Thu Nov 23 11:42:47 2023
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Flow Summary                                                           ;
 +-------------------------+----------------------------------------------+
-; Flow Status             ; Successful - Thu Nov 23 10:35:32 2023        ;
+; Flow Status             ; Successful - Thu Nov 23 11:42:47 2023        ;
 ; Quartus II Version      ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name           ; cpld_code                                    ;
 ; Top-level Entity Name   ; cpld_code                                    ;
@@ -46,7 +46,7 @@ applicable agreement for further details.
 ; Device                  ; EPM1270T144C5                                ;
 ; Timing Models           ; Final                                        ;
 ; Met timing requirements ; Yes                                          ;
-; Total logic elements    ; 8 / 1,270 ( < 1 % )                          ;
+; Total logic elements    ; 7 / 1,270 ( < 1 % )                          ;
 ; Total pins              ; 13 / 116 ( 11 % )                            ;
 ; Total virtual pins      ; 0                                            ;
 ; UFM blocks              ; 0 / 1 ( 0 % )                                ;
@@ -58,7 +58,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/23/2023 10:35:27 ;
+; Start date & time ; 11/23/2023 11:42:37 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; cpld_code           ;
 +-------------------+---------------------+
@@ -69,7 +69,7 @@ applicable agreement for further details.
 +---------------------------------------+-----------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                       ; Value                                         ; Default Value ; Entity Name ; Section Id     ;
 +---------------------------------------+-----------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                 ; 26601946585939.170070692707200                ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                 ; 26601946585939.170071095705568                ; --            ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP                ; 85                                            ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP                ; 0                                             ; --            ; --          ; --             ;
 ; MISC_FILE                             ; C:/Users/User/Desktop/cpld_code/cpld_code.dpf ; --            ; --          ; --             ;
@@ -84,11 +84,11 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:01     ; 1.0                     ; 237 MB              ; 00:00:01                           ;
-; Fitter                  ; 00:00:00     ; 1.0                     ; 232 MB              ; 00:00:00                           ;
-; Assembler               ; 00:00:00     ; 1.0                     ; 199 MB              ; 00:00:00                           ;
-; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 171 MB              ; 00:00:00                           ;
-; Total                   ; 00:00:01     ; --                      ; --                  ; 00:00:01                           ;
+; Analysis & Synthesis    ; 00:00:03     ; 1.0                     ; 237 MB              ; 00:00:01                           ;
+; Fitter                  ; 00:00:01     ; 1.0                     ; 232 MB              ; 00:00:01                           ;
+; Assembler               ; 00:00:01     ; 1.0                     ; 199 MB              ; 00:00:00                           ;
+; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 170 MB              ; 00:00:00                           ;
+; Total                   ; 00:00:06     ; --                      ; --                  ; 00:00:02                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
