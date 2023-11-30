@@ -1,16 +1,19 @@
 |cpld_code
-I[0] => Y.DATAB
-I[1] => Y.DATAB
-I[2] => Y.DATAB
-I[3] => Y.DATAA
-S[0] => Equal0.IN3
-S[0] => Equal1.IN3
-S[0] => Equal2.IN3
-S[0] => Equal3.IN3
-S[1] => Equal0.IN2
-S[1] => Equal1.IN2
-S[1] => Equal2.IN2
-S[1] => Equal3.IN2
-Y <= Y$latch.DB_MAX_OUTPUT_PORT_TYPE
+I => Mux0.IN3
+I => Mux1.IN3
+I => Mux2.IN3
+I => Mux3.IN3
+S[0] => Mux0.IN5
+S[0] => Mux1.IN5
+S[0] => Mux2.IN5
+S[0] => Mux3.IN5
+S[1] => Mux0.IN4
+S[1] => Mux1.IN4
+S[1] => Mux2.IN4
+S[1] => Mux3.IN4
+Y[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
 
 
