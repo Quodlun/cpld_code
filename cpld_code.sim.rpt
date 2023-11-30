@@ -1,5 +1,5 @@
 Simulator report for cpld_code
-Thu Nov 23 10:21:03 2023
+Thu Nov 30 10:40:30 2023
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -44,10 +44,10 @@ applicable agreement for further details.
 ; Type                        ; Value         ;
 +-----------------------------+---------------+
 ; Simulation Start Time       ; 0 ps          ;
-; Simulation End Time         ; 10.0 ms       ;
-; Simulation Netlist Size     ; 21 nodes      ;
-; Simulation Coverage         ;      42.86 %  ;
-; Total Number of Transitions ; 54            ;
+; Simulation End Time         ; 5.0 ms        ;
+; Simulation Netlist Size     ; 9 nodes       ;
+; Simulation Coverage         ;      77.78 %  ;
+; Total Number of Transitions ; 22            ;
 ; Simulation Breakpoints      ; 0             ;
 ; Family                      ; MAX II        ;
 ; Device                      ; EPM1270T144C5 ;
@@ -94,62 +94,52 @@ Please use Quartus II to view the waveform report data.
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;      42.86 % ;
-; Total nodes checked                                 ; 21           ;
-; Total output ports checked                          ; 21           ;
-; Total output ports with complete 1/0-value coverage ; 9            ;
-; Total output ports with no 1/0-value coverage       ; 0            ;
+; Total coverage as a percentage                      ;      77.78 % ;
+; Total nodes checked                                 ; 9            ;
+; Total output ports checked                          ; 9            ;
+; Total output ports with complete 1/0-value coverage ; 7            ;
+; Total output ports with no 1/0-value coverage       ; 2            ;
 ; Total output ports with no 1-value coverage         ; 2            ;
-; Total output ports with no 0-value coverage         ; 10           ;
+; Total output ports with no 0-value coverage         ; 2            ;
 +-----------------------------------------------------+--------------+
 
 
 The following table displays output ports that toggle between 1 and 0 during simulation.
-+----------------------------------------------------------+
-; Complete 1/0-Value Coverage                              ;
-+-------------------+-------------------+------------------+
-; Node Name         ; Output Port Name  ; Output Port Type ;
-+-------------------+-------------------+------------------+
-; |cpld_code|bcd~0  ; |cpld_code|bcd~0  ; combout          ;
-; |cpld_code|bcd~1  ; |cpld_code|bcd~1  ; combout          ;
-; |cpld_code|bcd~2  ; |cpld_code|bcd~2  ; combout          ;
-; |cpld_code|bcd~4  ; |cpld_code|bcd~4  ; combout          ;
-; |cpld_code|bcd~5  ; |cpld_code|bcd~5  ; combout          ;
-; |cpld_code|bcd~7  ; |cpld_code|bcd~7  ; combout          ;
-; |cpld_code|bcd[0] ; |cpld_code|bcd[0] ; padio            ;
-; |cpld_code|bcd[1] ; |cpld_code|bcd[1] ; padio            ;
-; |cpld_code|bcd[2] ; |cpld_code|bcd[2] ; padio            ;
-+-------------------+-------------------+------------------+
++---------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                   ;
++-------------------+------------------------+------------------+
+; Node Name         ; Output Port Name       ; Output Port Type ;
++-------------------+------------------------+------------------+
+; |cpld_code|Mux0~0 ; |cpld_code|Mux0~0      ; combout          ;
+; |cpld_code|Mux0~1 ; |cpld_code|Mux0~1      ; combout          ;
+; |cpld_code|I[2]   ; |cpld_code|I[2]~corein ; combout          ;
+; |cpld_code|S[1]   ; |cpld_code|S[1]~corein ; combout          ;
+; |cpld_code|S[0]   ; |cpld_code|S[0]~corein ; combout          ;
+; |cpld_code|I[0]   ; |cpld_code|I[0]~corein ; combout          ;
+; |cpld_code|Y      ; |cpld_code|Y           ; padio            ;
++-------------------+------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 1 during simulation.
-+--------------------------------------------------------+
-; Missing 1-Value Coverage                               ;
-+------------------+------------------+------------------+
-; Node Name        ; Output Port Name ; Output Port Type ;
-+------------------+------------------+------------------+
-; |cpld_code|bcd~3 ; |cpld_code|bcd~3 ; combout          ;
-; |cpld_code|bcd~6 ; |cpld_code|bcd~6 ; combout          ;
-+------------------+------------------+------------------+
++-------------------------------------------------------------+
+; Missing 1-Value Coverage                                    ;
++-----------------+------------------------+------------------+
+; Node Name       ; Output Port Name       ; Output Port Type ;
++-----------------+------------------------+------------------+
+; |cpld_code|I[1] ; |cpld_code|I[1]~corein ; combout          ;
+; |cpld_code|I[3] ; |cpld_code|I[3]~corein ; combout          ;
++-----------------+------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 0 during simulation.
-+---------------------------------------------------------------------+
-; Missing 0-Value Coverage                                            ;
-+---------------------+----------------------------+------------------+
-; Node Name           ; Output Port Name           ; Output Port Type ;
-+---------------------+----------------------------+------------------+
-; |cpld_code|sw_in[6] ; |cpld_code|sw_in[6]~corein ; combout          ;
-; |cpld_code|sw_in[7] ; |cpld_code|sw_in[7]~corein ; combout          ;
-; |cpld_code|sw_in[8] ; |cpld_code|sw_in[8]~corein ; combout          ;
-; |cpld_code|sw_in[4] ; |cpld_code|sw_in[4]~corein ; combout          ;
-; |cpld_code|sw_in[5] ; |cpld_code|sw_in[5]~corein ; combout          ;
-; |cpld_code|sw_in[2] ; |cpld_code|sw_in[2]~corein ; combout          ;
-; |cpld_code|sw_in[0] ; |cpld_code|sw_in[0]~corein ; combout          ;
-; |cpld_code|sw_in[1] ; |cpld_code|sw_in[1]~corein ; combout          ;
-; |cpld_code|sw_in[3] ; |cpld_code|sw_in[3]~corein ; combout          ;
-; |cpld_code|bcd[3]   ; |cpld_code|bcd[3]          ; padio            ;
-+---------------------+----------------------------+------------------+
++-------------------------------------------------------------+
+; Missing 0-Value Coverage                                    ;
++-----------------+------------------------+------------------+
+; Node Name       ; Output Port Name       ; Output Port Type ;
++-----------------+------------------------+------------------+
+; |cpld_code|I[1] ; |cpld_code|I[1]~corein ; combout          ;
+; |cpld_code|I[3] ; |cpld_code|I[3]~corein ; combout          ;
++-----------------+------------------------+------------------+
 
 
 +---------------------+
@@ -165,17 +155,17 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II Simulator
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Thu Nov 23 10:21:03 2023
+    Info: Processing started: Thu Nov 30 10:40:30 2023
 Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off cpld_code -c cpld_code
 Info: Using vector source file "C:/Users/User/Desktop/cpld_code/cpld_code.vwf"
 Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
 Info: Simulation partitioned into 1 sub-simulations
-Info: Simulation coverage is      42.86 %
-Info: Number of transitions in simulation is 54
+Info: Simulation coverage is      77.78 %
+Info: Number of transitions in simulation is 22
 Info: Quartus II Simulator was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 155 megabytes
-    Info: Processing ended: Thu Nov 23 10:21:03 2023
+    Info: Processing ended: Thu Nov 30 10:40:30 2023
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
