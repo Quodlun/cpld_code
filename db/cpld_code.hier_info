@@ -1,8 +1,8 @@
 |cpld_code
-I => Y.DATAB
-I => Y.DATAB
-I => Y.DATAB
-I => Y.DATAB
+I[0] => Y.DATAB
+I[1] => Y.DATAB
+I[2] => Y.DATAB
+I[3] => Y.DATAA
 S[0] => Equal0.IN3
 S[0] => Equal1.IN3
 S[0] => Equal2.IN3
@@ -11,9 +11,6 @@ S[1] => Equal0.IN2
 S[1] => Equal1.IN2
 S[1] => Equal2.IN2
 S[1] => Equal3.IN2
-Y[0] <= Y.DB_MAX_OUTPUT_PORT_TYPE
-Y[1] <= Y.DB_MAX_OUTPUT_PORT_TYPE
-Y[2] <= Y.DB_MAX_OUTPUT_PORT_TYPE
-Y[3] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+Y <= Y$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
