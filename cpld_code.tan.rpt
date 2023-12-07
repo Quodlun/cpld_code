@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for cpld_code
-Thu Nov 30 11:50:57 2023
+Thu Dec 07 11:00:52 2023
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -34,14 +34,14 @@ applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Timing Analyzer Summary                                                                                                 ;
-+------------------------------+-------+---------------+-------------+------+------+------------+----------+--------------+
-; Type                         ; Slack ; Required Time ; Actual Time ; From ; To   ; From Clock ; To Clock ; Failed Paths ;
-+------------------------------+-------+---------------+-------------+------+------+------------+----------+--------------+
-; Worst-case tpd               ; N/A   ; None          ; 10.957 ns   ; I    ; Y[2] ; --         ; --       ; 0            ;
-; Total number of failed paths ;       ;               ;             ;      ;      ;            ;          ; 0            ;
-+------------------------------+-------+---------------+-------------+------+------+------------+----------+--------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                               ;
++------------------------------+-------+---------------+-------------+------+----+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time ; From ; To ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+-------------+------+----+------------+----------+--------------+
+; Worst-case tpd               ; N/A   ; None          ; 9.522 ns    ; B    ; F2 ; --         ; --       ; 0            ;
+; Total number of failed paths ;       ;               ;             ;      ;    ;            ;          ; 0            ;
++------------------------------+-------+---------------+-------------+------+----+------------+----------+--------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -89,24 +89,18 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------+
-; tpd                                                       ;
-+-------+-------------------+-----------------+------+------+
-; Slack ; Required P2P Time ; Actual P2P Time ; From ; To   ;
-+-------+-------------------+-----------------+------+------+
-; N/A   ; None              ; 10.957 ns       ; I    ; Y[2] ;
-; N/A   ; None              ; 10.289 ns       ; S[0] ; Y[2] ;
-; N/A   ; None              ; 9.949 ns        ; I    ; Y[3] ;
-; N/A   ; None              ; 9.291 ns        ; I    ; Y[0] ;
-; N/A   ; None              ; 9.210 ns        ; S[0] ; Y[3] ;
-; N/A   ; None              ; 9.053 ns        ; S[1] ; Y[2] ;
-; N/A   ; None              ; 8.798 ns        ; I    ; Y[1] ;
-; N/A   ; None              ; 8.545 ns        ; S[0] ; Y[0] ;
-; N/A   ; None              ; 7.974 ns        ; S[1] ; Y[3] ;
-; N/A   ; None              ; 7.358 ns        ; S[0] ; Y[1] ;
-; N/A   ; None              ; 7.299 ns        ; S[1] ; Y[0] ;
-; N/A   ; None              ; 5.569 ns        ; S[1] ; Y[1] ;
-+-------+-------------------+-----------------+------+------+
++---------------------------------------------------------+
+; tpd                                                     ;
++-------+-------------------+-----------------+------+----+
+; Slack ; Required P2P Time ; Actual P2P Time ; From ; To ;
++-------+-------------------+-----------------+------+----+
+; N/A   ; None              ; 9.522 ns        ; B    ; F2 ;
+; N/A   ; None              ; 9.479 ns        ; B    ; F3 ;
+; N/A   ; None              ; 8.750 ns        ; A    ; F2 ;
+; N/A   ; None              ; 8.727 ns        ; A    ; F3 ;
+; N/A   ; None              ; 8.160 ns        ; B    ; F1 ;
+; N/A   ; None              ; 7.389 ns        ; A    ; F1 ;
++-------+-------------------+-----------------+------+----+
 
 
 +--------------------------+
@@ -115,19 +109,19 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II Classic Timing Analyzer
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Thu Nov 30 11:50:57 2023
+    Info: Processing started: Thu Dec 07 11:00:52 2023
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off cpld_code -c cpld_code
 Info: Started post-fitting delay annotation
 Info: Delay annotation completed successfully
-Info: Longest tpd from source pin "I" to destination pin "Y[2]" is 10.957 ns
-    Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_122; Fanout = 4; PIN Node = 'I'
-    Info: 2: + IC(3.755 ns) + CELL(0.200 ns) = 5.087 ns; Loc. = LC_X1_Y9_N8; Fanout = 1; COMB Node = 'Mux2~0'
-    Info: 3: + IC(3.548 ns) + CELL(2.322 ns) = 10.957 ns; Loc. = PIN_55; Fanout = 0; PIN Node = 'Y[2]'
-    Info: Total cell delay = 3.654 ns ( 33.35 % )
-    Info: Total interconnect delay = 7.303 ns ( 66.65 % )
+Info: Longest tpd from source pin "B" to destination pin "F2" is 9.522 ns
+    Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_122; Fanout = 3; PIN Node = 'B'
+    Info: 2: + IC(3.898 ns) + CELL(0.200 ns) = 5.230 ns; Loc. = LC_X1_Y7_N0; Fanout = 1; COMB Node = 'process_0~1'
+    Info: 3: + IC(1.970 ns) + CELL(2.322 ns) = 9.522 ns; Loc. = PIN_39; Fanout = 0; PIN Node = 'F2'
+    Info: Total cell delay = 3.654 ns ( 38.37 % )
+    Info: Total interconnect delay = 5.868 ns ( 61.63 % )
 Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 184 megabytes
-    Info: Processing ended: Thu Nov 30 11:50:57 2023
+    Info: Processing ended: Thu Dec 07 11:00:52 2023
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 

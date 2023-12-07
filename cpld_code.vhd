@@ -6,10 +6,10 @@ use ieee.std_logic_arith.all;
 entity cpld_code is
 port
 (	
-	I	: in std_logic;
-	S	: in std_logic_vector ( 1 downto 0 );
+	A			: in std_logic;
+	B			: in std_logic;
 	
-	Y	: out std_logic_vector ( 3 downto 0 )
+	F1, F2, F3	: out std_logic
 );
 
 end cpld_code;
@@ -17,19 +17,14 @@ end cpld_code;
 architecture df of cpld_code is
 
 begin
-	with S select
-	Y(0) <= I when "00",
-			'0' when others;
-	
-	with S select
-	Y(1) <= I when "01",
-			'0' when others;
-	
-	with S select
-	Y(2) <= I when "10",
-			'0' when others;
-	
-	with S select
-	Y(3) <= I when "11",
-			'0' when others;
-end df;	
+	process (A, B)
+	begin
+		F1 <= '0';
+		F2 <= '0';
+		F3 <= '0';
+		
+		if ( A < B ) then F1 <= '1'; end if;
+		if ( A = B ) then F2 <= '1'; end if;
+		if ( A > B ) then F3 <= '1'; end if;
+	end process;
+end df;
