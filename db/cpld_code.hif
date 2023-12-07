@@ -31,7 +31,7 @@ ON
 # case_insensitive
 # source_file
 cpld_code.vhd
-59942a23924372a6d1fb8222e4c8ff3
+2fb0b77076883611d246fc78559f9d8c
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
