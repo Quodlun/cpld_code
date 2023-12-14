@@ -64,7 +64,7 @@ set_location_assignment PIN_28 -to seg_out[2]
 set_location_assignment PIN_30 -to seg_out[1]
 set_location_assignment PIN_32 -to seg_out[0]
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
-set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_global_assignment -name SIMULATION_MODE TIMING
 set_location_assignment PIN_37 -to sw_in[8]
 set_location_assignment PIN_39 -to sw_in[7]
 set_location_assignment PIN_41 -to sw_in[6]
