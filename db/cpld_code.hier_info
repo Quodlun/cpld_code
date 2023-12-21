@@ -3,12 +3,12 @@ clk => Q~reg0.CLK
 PR => Q~reg0.PRESET
 PR => Q.IN0
 CLR => Q.IN1
-J => Equal0.IN2
-J => Equal1.IN2
-J => Equal2.IN2
-K => Equal0.IN3
-K => Equal1.IN3
-K => Equal2.IN3
+D => Equal0.IN2
+D => Equal1.IN2
+D => Equal2.IN2
+D => Equal0.IN3
+D => Equal1.IN3
+D => Equal2.IN3
 Q << Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
