@@ -7,7 +7,7 @@ entity cpld_code is
 port (
 	clk		: in std_logic;
 	PR, CLR	: in std_logic;
-	D		: in std_logic;
+	T		: in std_logic;
 	
 	Q		: buffer std_logic
 	);
@@ -51,7 +51,7 @@ architecture beh of cpld_code is
 	end jk_ff;	
 	
 begin
-	J1 <= D; K1 <= not D;
+	J1 <= T; K1 <= T;
 	jk_ff ( clk, PR, CLR, J1, K1, Q );
 	
 end beh;

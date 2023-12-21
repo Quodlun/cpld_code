@@ -52,6 +52,6 @@ architecture beh of cpld_code is
 	
 begin
 	J1 <= D; K1 <= not D;
-	jk_ff ( clk, PR, CLR, J, K, Q );
+	jk_ff ( clk, PR, CLR, J1, K1, Q );
 	
 end beh;
