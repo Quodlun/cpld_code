@@ -4,54 +4,53 @@ use ieee.std_logic_unsigned.all;
 use ieee.std_logic_arith.all;
 
 entity cpld_code is
+generic ( fmax
 port (
 	clk		: in std_logic;
-	PR, CLR	: in std_logic;
-	T		: in std_logic;
 	
-	Q		: buffer std_logic
+	wave_s	: out std_logic;
+	wave_p	: out std_logic
 	);
 end cpld_code;
 
 architecture beh of cpld_code is
-	signal JK		: std_logic_vector ( 1 downto 0 );
-	signal J1, K1	: std_logic;
+	signal fo : integer = 24E5;
 
-	procedure jk_ff ( signal clk			: in 	std_logic;
-					  signal JKPR, JKCLR 	: in 	std_logic;
-					  signal J, K			: in	std_logic;
-					  Signal JKQ			: inout std_logic ) is
-
-	begin
-		JK <= J & K;
-
-		if ( JKPR = '1' ) then
-			JKQ <= '1';
-
-		elsif ( JKCLR = '1' ) then
-			JKQ <= '0';
-
-		elsif ( clk'event and clk = '1' ) then
-			if ( JK = "00" ) then
-				JKQ <= JKQ;
-				end if;
-
-			if ( JK = "01" ) then
-				JKQ <= '0';
-				end if;
-
-			if ( JK = "10" ) then
-				JKQ <= '1';
-				end if;
-
-			if ( JK = "11" ) then
-				JKQ <= not JKQ;
-				end if;
-		end if;
-	end jk_ff;	
-	
 begin
-	J1 <= T; K1 <= T;
-	jk_ff ( clk, PR, CLR, J1, K1, Q );
+	process ( clk )
+	variable cnt_S	: std_logic_vector ( 3 downto 0 );
 	
+	begin
+		if ( clk'event and clk = '1' ) then
+			if ( cnt_S < fmax / ( 2 * fo ) - 1 ) then
+				wave_s <= '0';
+				cnt_S  := cnt_S + 1;
+			
+			elsif ( cnt_S < fmax / fo - 1 ) then
+				wave_s <= '1';
+				cnt_S  := cnt_S + 1;
+			
+			else
+				wave_s <= '0';
+				cnt_S  := ( other => '0' );
+			
+			end if;
+		end if;
+	end process
+
+	process ( clk )
+	variable cnt_p	: std_logic_vector ( 3 downto 0 );
+	
+	begin
+		if ( clk'event and clk = '1' ) then
+			if ( cnt_P < fmax / fo - 1 ) then
+				wave_p <= '0';
+				cnt_p  := cnt_p + 1
+				
+			else
+				wave_p <= '1';
+				cnt_p  := ( others => '0' );
+			end if;
+		end if;
+	end process;
 end beh;
