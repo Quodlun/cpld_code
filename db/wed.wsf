@@ -196,7 +196,7 @@ VECTOR("C:/Users/User/Desktop/cpld_code/db/cpld_code.sim.cvwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "CLR";
+		SIGNAL = "scan";
 		INDEX = 1;
 		FORMAT = E;
 		SCALE = 1;
@@ -204,7 +204,7 @@ VECTOR("C:/Users/User/Desktop/cpld_code/db/cpld_code.sim.cvwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "D";
+		SIGNAL = "seg_out[0]";
 		INDEX = 2;
 		FORMAT = E;
 		SCALE = 1;
@@ -212,7 +212,7 @@ VECTOR("C:/Users/User/Desktop/cpld_code/db/cpld_code.sim.cvwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "PR";
+		SIGNAL = "seg_out[1]";
 		INDEX = 3;
 		FORMAT = E;
 		SCALE = 1;
@@ -220,8 +220,48 @@ VECTOR("C:/Users/User/Desktop/cpld_code/db/cpld_code.sim.cvwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "Q";
+		SIGNAL = "seg_out[2]";
 		INDEX = 4;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "seg_out[3]";
+		INDEX = 5;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "seg_out[4]";
+		INDEX = 6;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "seg_out[5]";
+		INDEX = 7;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "seg_out[6]";
+		INDEX = 8;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "seg_out[7]";
+		INDEX = 9;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;

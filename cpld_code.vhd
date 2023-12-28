@@ -4,53 +4,68 @@ use ieee.std_logic_unsigned.all;
 use ieee.std_logic_arith.all;
 
 entity cpld_code is
-generic ( fmax
+generic ( fmax : integer := 24E6 );
 port (
 	clk		: in std_logic;
 	
-	wave_s	: out std_logic;
-	wave_p	: out std_logic
+	scan	: out std_logic;
+	seg_out	: out std_logic_vector ( 7 downto 0 )
 	);
 end cpld_code;
 
 architecture beh of cpld_code is
-	signal fo : integer = 24E5;
+	signal bcd : std_logic_vector ( 3 downto 0 );
+	signal f_1 : std_logic;
 
 begin
+	scan <= '1';
+	
 	process ( clk )
-	variable cnt_S	: std_logic_vector ( 3 downto 0 );
+	variable cnt_p	: std_logic_vector ( 24 downto 0 );
+	variable fo		: integer := 1;
 	
 	begin
-		if ( clk'event and clk = '1' ) then
-			if ( cnt_S < fmax / ( 2 * fo ) - 1 ) then
-				wave_s <= '0';
-				cnt_S  := cnt_S + 1;
-			
-			elsif ( cnt_S < fmax / fo - 1 ) then
-				wave_s <= '1';
-				cnt_S  := cnt_S + 1;
-			
-			else
-				wave_s <= '0';
-				cnt_S  := ( other => '0' );
-			
-			end if;
-		end if;
-	end process
-
-	process ( clk )
-	variable cnt_p	: std_logic_vector ( 3 downto 0 );
-	
-	begin
-		if ( clk'event and clk = '1' ) then
-			if ( cnt_P < fmax / fo - 1 ) then
-				wave_p <= '0';
-				cnt_p  := cnt_p + 1
+		if ( clk'event and clk = '1' )then
+			if ( cnt_p < fmax / fo - 1 ) then
+				f_1		<= '0';
+				cnt_p	:= cnt_p + 1;
 				
 			else
-				wave_p <= '1';
-				cnt_p  := ( others => '0' );
+				f_1		<= '1';
+				cnt_p	:= ( others => '0' );
+				
 			end if;
 		end if;
 	end process;
+	
+	process ( clk )
+	variable bcd_cnt	: std_logic_vector ( 3 downto 0 );
+	
+	begin
+		if ( clk'event and clk = '1' ) then
+			if ( f_1 = '1' ) then
+				if ( bcd_cnt < 9 ) then
+					bcd_cnt	:= bcd_cnt + 1;
+
+				else
+					bcd_cnt := ( others => '0' );
+					
+				end if;
+				bcd <= bcd_cnt;
+				
+			end if;
+		end if;
+	end process;
+	
+	seg_out	<= "01101111" when ( bcd = 9 ) else
+			   "01111111" when ( bcd = 8 ) else
+			   "00000111" when ( bcd = 7 ) else
+			   "01111101" when ( bcd = 6 ) else
+			   "01101101" when ( bcd = 5 ) else
+			   "01100110" when ( bcd = 4 ) else
+			   "01001111" when ( bcd = 3 ) else
+			   "01011011" when ( bcd = 2 ) else
+			   "00000110" when ( bcd = 1 ) else
+			   "00111111" ;
+			   
 end beh;

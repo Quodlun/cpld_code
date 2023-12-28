@@ -1,5 +1,5 @@
 Analysis & Synthesis report for cpld_code
-Thu Dec 21 12:12:38 2023
+Thu Dec 28 11:33:43 2023
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -10,7 +10,14 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |cpld_code
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -36,11 +43,15 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                               ;
 +-----------------------------+----------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Thu Dec 21 12:12:38 2023            ;
+; Analysis & Synthesis Status ; Successful - Thu Dec 28 11:33:43 2023        ;
 ; Quartus II Version          ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name               ; cpld_code                                    ;
 ; Top-level Entity Name       ; cpld_code                                    ;
 ; Family                      ; MAX II                                       ;
+; Total logic elements        ; 49                                           ;
+; Total pins                  ; 10                                           ;
+; Total virtual pins          ; 0                                            ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                                ;
 +-----------------------------+----------------------------------------------+
 
 
@@ -122,31 +133,131 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                               ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                  ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------+
+; cpld_code.vhd                    ; yes             ; User VHDL File  ; C:/Users/User/Desktop/cpld_code/cpld_code.vhd ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 49    ;
+;     -- Combinational with no register       ; 19    ;
+;     -- Register only                        ; 1     ;
+;     -- Combinational with a register        ; 29    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 19    ;
+;     -- 3 input functions                    ; 2     ;
+;     -- 2 input functions                    ; 26    ;
+;     -- 1 input functions                    ; 1     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 25    ;
+;     -- arithmetic mode                      ; 24    ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 25    ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 30    ;
+; Total logic cells in carry chains           ; 25    ;
+; I/O pins                                    ; 10    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 30    ;
+; Total fan-out                               ; 202   ;
+; Average fan-out                             ; 3.42  ;
++---------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                  ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; |cpld_code                 ; 49 (49)     ; 30           ; 0          ; 10   ; 0            ; 19 (19)      ; 1 (1)             ; 29 (29)          ; 25 (25)         ; 0 (0)      ; |cpld_code          ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; bcd_cnt[3]                            ; Merged with bcd[3] ;
+; bcd_cnt[2]                            ; Merged with bcd[2] ;
+; bcd_cnt[1]                            ; Merged with bcd[1] ;
+; bcd_cnt[0]                            ; Merged with bcd[0] ;
+; Total Number of Removed Registers = 4 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 30    ;
+; Number of registers using Synchronous Clear  ; 25    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 4     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |cpld_code|seg_out         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |cpld_code ;
++----------------+----------+-----------------------------------------------+
+; Parameter Name ; Value    ; Type                                          ;
++----------------+----------+-----------------------------------------------+
+; fmax           ; 24000000 ; Signed Integer                                ;
++----------------+----------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Thu Dec 21 12:12:37 2023
+    Info: Processing started: Thu Dec 28 11:33:42 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off cpld_code -c cpld_code
-Error (10500): VHDL syntax error at cpld_code.vhd(8) near text "port";  expecting ":", or "," File: C:/Users/User/Desktop/cpld_code/cpld_code.vhd Line: 8
-Error (10523): Ignored construct cpld_code at cpld_code.vhd(6) due to previous errors File: C:/Users/User/Desktop/cpld_code/cpld_code.vhd Line: 6
-Error (10500): VHDL syntax error at cpld_code.vhd(17) near text "=";  expecting ";", or ":=", or "bus", or "register" File: C:/Users/User/Desktop/cpld_code/cpld_code.vhd Line: 17
-Error (10500): VHDL syntax error at cpld_code.vhd(24) near text "if";  expecting "end", or "(", or an identifier ("if" is a reserved keyword), or a concurrent statement File: C:/Users/User/Desktop/cpld_code/cpld_code.vhd Line: 24
-Error (10500): VHDL syntax error at cpld_code.vhd(24) near text "then";  expecting "<=" File: C:/Users/User/Desktop/cpld_code/cpld_code.vhd Line: 24
-Error (10500): VHDL syntax error at cpld_code.vhd(25) near text "then";  expecting "<=" File: C:/Users/User/Desktop/cpld_code/cpld_code.vhd Line: 25
-Error (10500): VHDL syntax error at cpld_code.vhd(27) near text ":=";  expecting "(", or "'", or "." File: C:/Users/User/Desktop/cpld_code/cpld_code.vhd Line: 27
-Error (10500): VHDL syntax error at cpld_code.vhd(29) near text "then";  expecting "<=" File: C:/Users/User/Desktop/cpld_code/cpld_code.vhd Line: 29
-Error (10500): VHDL syntax error at cpld_code.vhd(31) near text ":=";  expecting "(", or "'", or "." File: C:/Users/User/Desktop/cpld_code/cpld_code.vhd Line: 31
-Error (10500): VHDL syntax error at cpld_code.vhd(35) near text ":=";  expecting "(", or "'", or "." File: C:/Users/User/Desktop/cpld_code/cpld_code.vhd Line: 35
-Error (10500): VHDL syntax error at cpld_code.vhd(35) near text ";";  expecting "<=" File: C:/Users/User/Desktop/cpld_code/cpld_code.vhd Line: 35
-Error (10500): VHDL syntax error at cpld_code.vhd(50) near text "else";  expecting ";" File: C:/Users/User/Desktop/cpld_code/cpld_code.vhd Line: 50
-Info: Found 0 design units, including 0 entities, in source file cpld_code.vhd
-Error: Quartus II Analysis & Synthesis was unsuccessful. 12 errors, 0 warnings
-    Error: Peak virtual memory: 235 megabytes
-    Error: Processing ended: Thu Dec 21 12:12:38 2023
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:01
+Info: Found 2 design units, including 1 entities, in source file cpld_code.vhd
+    Info: Found design unit 1: cpld_code-beh
+    Info: Found entity 1: cpld_code
+Info: Elaborating entity "cpld_code" for the top level hierarchy
+Warning (10542): VHDL Variable Declaration warning at cpld_code.vhd(25): used initial value expression for variable "fo" because variable was never assigned a value
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "scan" is stuck at VCC
+    Warning (13410): Pin "seg_out[7]" is stuck at GND
+Info: Implemented 59 device resources after synthesis - the final resource count might be different
+    Info: Implemented 1 input pins
+    Info: Implemented 9 output pins
+    Info: Implemented 49 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 243 megabytes
+    Info: Processing ended: Thu Dec 28 11:33:43 2023
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 

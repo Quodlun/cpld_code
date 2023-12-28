@@ -1,5 +1,5 @@
 Simulator report for cpld_code
-Thu Dec 21 10:55:49 2023
+Thu Dec 28 11:33:51 2023
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -45,9 +45,9 @@ applicable agreement for further details.
 +-----------------------------+---------------+
 ; Simulation Start Time       ; 0 ps          ;
 ; Simulation End Time         ; 10.0 ms       ;
-; Simulation Netlist Size     ; 7 nodes       ;
-; Simulation Coverage         ;      85.71 %  ;
-; Total Number of Transitions ; 47            ;
+; Simulation Netlist Size     ; 58 nodes      ;
+; Simulation Coverage         ;       7.89 %  ;
+; Total Number of Transitions ; 71            ;
 ; Simulation Breakpoints      ; 0             ;
 ; Family                      ; MAX II        ;
 ; Device                      ; EPM1270T144C5 ;
@@ -94,47 +94,187 @@ Please use Quartus II to view the waveform report data.
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;      85.71 % ;
-; Total nodes checked                                 ; 7            ;
-; Total output ports checked                          ; 7            ;
+; Total coverage as a percentage                      ;       7.89 % ;
+; Total nodes checked                                 ; 58           ;
+; Total output ports checked                          ; 76           ;
 ; Total output ports with complete 1/0-value coverage ; 6            ;
-; Total output ports with no 1/0-value coverage       ; 0            ;
-; Total output ports with no 1-value coverage         ; 1            ;
-; Total output ports with no 0-value coverage         ; 0            ;
+; Total output ports with no 1/0-value coverage       ; 70           ;
+; Total output ports with no 1-value coverage         ; 70           ;
+; Total output ports with no 0-value coverage         ; 70           ;
 +-----------------------------------------------------+--------------+
 
 
 The following table displays output ports that toggle between 1 and 0 during simulation.
-+--------------------------------------------------------------+
-; Complete 1/0-Value Coverage                                  ;
-+-------------------+-----------------------+------------------+
-; Node Name         ; Output Port Name      ; Output Port Type ;
-+-------------------+-----------------------+------------------+
-; |cpld_code|Q~reg0 ; |cpld_code|Q~reg0     ; regout           ;
-; |cpld_code|Q~0    ; |cpld_code|Q~0        ; combout          ;
-; |cpld_code|D      ; |cpld_code|D~corein   ; combout          ;
-; |cpld_code|clk    ; |cpld_code|clk~corein ; combout          ;
-; |cpld_code|CLR    ; |cpld_code|CLR~corein ; combout          ;
-; |cpld_code|Q      ; |cpld_code|Q          ; padio            ;
-+-------------------+-----------------------+------------------+
++-------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                             ;
++---------------------+--------------------------------+------------------+
+; Node Name           ; Output Port Name               ; Output Port Type ;
++---------------------+--------------------------------+------------------+
+; |cpld_code|cnt_p[0] ; |cpld_code|cnt_p[0]~33         ; cout0            ;
+; |cpld_code|cnt_p[0] ; |cpld_code|cnt_p[0]~33COUT1_71 ; cout1            ;
+; |cpld_code|cnt_p[1] ; |cpld_code|cnt_p[1]~35         ; cout             ;
+; |cpld_code|cnt_p[2] ; |cpld_code|cnt_p[2]~37         ; cout0            ;
+; |cpld_code|cnt_p[3] ; |cpld_code|cnt_p[3]~39         ; cout0            ;
+; |cpld_code|clk      ; |cpld_code|clk~corein          ; combout          ;
++---------------------+--------------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 1 during simulation.
-+---------------------------------------------------------+
-; Missing 1-Value Coverage                                ;
-+---------------+----------------------+------------------+
-; Node Name     ; Output Port Name     ; Output Port Type ;
-+---------------+----------------------+------------------+
-; |cpld_code|PR ; |cpld_code|PR~corein ; combout          ;
-+---------------+----------------------+------------------+
++-------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                      ;
++-------------------------+----------------------------------+------------------+
+; Node Name               ; Output Port Name                 ; Output Port Type ;
++-------------------------+----------------------------------+------------------+
+; |cpld_code|bcd[1]       ; |cpld_code|bcd[1]                ; regout           ;
+; |cpld_code|bcd[2]       ; |cpld_code|bcd[2]                ; regout           ;
+; |cpld_code|bcd[0]       ; |cpld_code|bcd[0]                ; regout           ;
+; |cpld_code|seg_out~0    ; |cpld_code|seg_out~0             ; combout          ;
+; |cpld_code|seg_out~1    ; |cpld_code|seg_out~1             ; combout          ;
+; |cpld_code|seg_out~2    ; |cpld_code|seg_out~2             ; combout          ;
+; |cpld_code|seg_out~3    ; |cpld_code|seg_out~3             ; combout          ;
+; |cpld_code|seg_out~4    ; |cpld_code|seg_out~4             ; combout          ;
+; |cpld_code|seg_out~5    ; |cpld_code|seg_out~5             ; combout          ;
+; |cpld_code|seg_out~6    ; |cpld_code|seg_out~6             ; combout          ;
+; |cpld_code|cnt_p[20]    ; |cpld_code|cnt_p[20]~1           ; cout0            ;
+; |cpld_code|cnt_p[20]    ; |cpld_code|cnt_p[20]~1COUT1_103  ; cout1            ;
+; |cpld_code|cnt_p[23]    ; |cpld_code|cnt_p[23]~3           ; cout0            ;
+; |cpld_code|cnt_p[23]    ; |cpld_code|cnt_p[23]~3COUT1_107  ; cout1            ;
+; |cpld_code|LessThan0~0  ; |cpld_code|LessThan0~0           ; combout          ;
+; |cpld_code|cnt_p[17]    ; |cpld_code|cnt_p[17]~5           ; cout0            ;
+; |cpld_code|cnt_p[17]    ; |cpld_code|cnt_p[17]~5COUT1_97   ; cout1            ;
+; |cpld_code|cnt_p[18]    ; |cpld_code|cnt_p[18]~7           ; cout0            ;
+; |cpld_code|cnt_p[18]    ; |cpld_code|cnt_p[18]~7COUT1_99   ; cout1            ;
+; |cpld_code|cnt_p[19]    ; |cpld_code|cnt_p[19]~9           ; cout0            ;
+; |cpld_code|cnt_p[19]    ; |cpld_code|cnt_p[19]~9COUT1_101  ; cout1            ;
+; |cpld_code|LessThan0~1  ; |cpld_code|LessThan0~1           ; combout          ;
+; |cpld_code|cnt_p[21]    ; |cpld_code|cnt_p[21]~11          ; cout             ;
+; |cpld_code|cnt_p[22]    ; |cpld_code|cnt_p[22]~15          ; cout0            ;
+; |cpld_code|cnt_p[22]    ; |cpld_code|cnt_p[22]~15COUT1_105 ; cout1            ;
+; |cpld_code|cnt_p[11]    ; |cpld_code|cnt_p[11]~17          ; cout             ;
+; |cpld_code|cnt_p[10]    ; |cpld_code|cnt_p[10]~19          ; cout0            ;
+; |cpld_code|cnt_p[10]    ; |cpld_code|cnt_p[10]~19COUT1_87  ; cout1            ;
+; |cpld_code|cnt_p[12]    ; |cpld_code|cnt_p[12]~21          ; cout0            ;
+; |cpld_code|cnt_p[12]    ; |cpld_code|cnt_p[12]~21COUT1_89  ; cout1            ;
+; |cpld_code|cnt_p[13]    ; |cpld_code|cnt_p[13]~23          ; cout0            ;
+; |cpld_code|cnt_p[13]    ; |cpld_code|cnt_p[13]~23COUT1_91  ; cout1            ;
+; |cpld_code|LessThan0~2  ; |cpld_code|LessThan0~2           ; combout          ;
+; |cpld_code|cnt_p[16]    ; |cpld_code|cnt_p[16]~25          ; cout             ;
+; |cpld_code|cnt_p[14]    ; |cpld_code|cnt_p[14]~27          ; cout0            ;
+; |cpld_code|cnt_p[14]    ; |cpld_code|cnt_p[14]~27COUT1_93  ; cout1            ;
+; |cpld_code|cnt_p[15]    ; |cpld_code|cnt_p[15]~29          ; cout0            ;
+; |cpld_code|cnt_p[15]    ; |cpld_code|cnt_p[15]~29COUT1_95  ; cout1            ;
+; |cpld_code|LessThan0~3  ; |cpld_code|LessThan0~3           ; combout          ;
+; |cpld_code|LessThan0~4  ; |cpld_code|LessThan0~4           ; combout          ;
+; |cpld_code|LessThan0~5  ; |cpld_code|LessThan0~5           ; combout          ;
+; |cpld_code|LessThan0~6  ; |cpld_code|LessThan0~6           ; combout          ;
+; |cpld_code|cnt_p[9]     ; |cpld_code|cnt_p[9]~31           ; cout0            ;
+; |cpld_code|cnt_p[9]     ; |cpld_code|cnt_p[9]~31COUT1_85   ; cout1            ;
+; |cpld_code|LessThan0~7  ; |cpld_code|LessThan0~7           ; combout          ;
+; |cpld_code|cnt_p[2]     ; |cpld_code|cnt_p[2]~37COUT1_73   ; cout1            ;
+; |cpld_code|cnt_p[3]     ; |cpld_code|cnt_p[3]~39COUT1_75   ; cout1            ;
+; |cpld_code|LessThan0~8  ; |cpld_code|LessThan0~8           ; combout          ;
+; |cpld_code|cnt_p[4]     ; |cpld_code|cnt_p[4]~41           ; cout0            ;
+; |cpld_code|cnt_p[4]     ; |cpld_code|cnt_p[4]~41COUT1_77   ; cout1            ;
+; |cpld_code|cnt_p[5]     ; |cpld_code|cnt_p[5]~43           ; cout0            ;
+; |cpld_code|cnt_p[5]     ; |cpld_code|cnt_p[5]~43COUT1_79   ; cout1            ;
+; |cpld_code|cnt_p[6]     ; |cpld_code|cnt_p[6]~45           ; cout             ;
+; |cpld_code|cnt_p[7]     ; |cpld_code|cnt_p[7]~47           ; cout0            ;
+; |cpld_code|cnt_p[7]     ; |cpld_code|cnt_p[7]~47COUT1_81   ; cout1            ;
+; |cpld_code|LessThan0~9  ; |cpld_code|LessThan0~9           ; combout          ;
+; |cpld_code|cnt_p[8]     ; |cpld_code|cnt_p[8]~49           ; cout0            ;
+; |cpld_code|cnt_p[8]     ; |cpld_code|cnt_p[8]~49COUT1_83   ; cout1            ;
+; |cpld_code|LessThan0~10 ; |cpld_code|LessThan0~10          ; combout          ;
+; |cpld_code|f_1          ; |cpld_code|LessThan0~11          ; combout          ;
+; |cpld_code|f_1          ; |cpld_code|f_1                   ; regout           ;
+; |cpld_code|scan         ; |cpld_code|scan                  ; padio            ;
+; |cpld_code|seg_out[0]   ; |cpld_code|seg_out[0]            ; padio            ;
+; |cpld_code|seg_out[1]   ; |cpld_code|seg_out[1]            ; padio            ;
+; |cpld_code|seg_out[2]   ; |cpld_code|seg_out[2]            ; padio            ;
+; |cpld_code|seg_out[3]   ; |cpld_code|seg_out[3]            ; padio            ;
+; |cpld_code|seg_out[4]   ; |cpld_code|seg_out[4]            ; padio            ;
+; |cpld_code|seg_out[5]   ; |cpld_code|seg_out[5]            ; padio            ;
+; |cpld_code|seg_out[6]   ; |cpld_code|seg_out[6]            ; padio            ;
+; |cpld_code|seg_out[7]   ; |cpld_code|seg_out[7]            ; padio            ;
++-------------------------+----------------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 0 during simulation.
-+-------------------------------------------------+
-; Missing 0-Value Coverage                        ;
-+-----------+------------------+------------------+
-; Node Name ; Output Port Name ; Output Port Type ;
-+-----------+------------------+------------------+
++-------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                      ;
++-------------------------+----------------------------------+------------------+
+; Node Name               ; Output Port Name                 ; Output Port Type ;
++-------------------------+----------------------------------+------------------+
+; |cpld_code|bcd[1]       ; |cpld_code|bcd[1]                ; regout           ;
+; |cpld_code|bcd[2]       ; |cpld_code|bcd[2]                ; regout           ;
+; |cpld_code|bcd[0]       ; |cpld_code|bcd[0]                ; regout           ;
+; |cpld_code|seg_out~0    ; |cpld_code|seg_out~0             ; combout          ;
+; |cpld_code|seg_out~1    ; |cpld_code|seg_out~1             ; combout          ;
+; |cpld_code|seg_out~2    ; |cpld_code|seg_out~2             ; combout          ;
+; |cpld_code|seg_out~3    ; |cpld_code|seg_out~3             ; combout          ;
+; |cpld_code|seg_out~4    ; |cpld_code|seg_out~4             ; combout          ;
+; |cpld_code|seg_out~5    ; |cpld_code|seg_out~5             ; combout          ;
+; |cpld_code|seg_out~6    ; |cpld_code|seg_out~6             ; combout          ;
+; |cpld_code|cnt_p[20]    ; |cpld_code|cnt_p[20]~1           ; cout0            ;
+; |cpld_code|cnt_p[20]    ; |cpld_code|cnt_p[20]~1COUT1_103  ; cout1            ;
+; |cpld_code|cnt_p[23]    ; |cpld_code|cnt_p[23]~3           ; cout0            ;
+; |cpld_code|cnt_p[23]    ; |cpld_code|cnt_p[23]~3COUT1_107  ; cout1            ;
+; |cpld_code|LessThan0~0  ; |cpld_code|LessThan0~0           ; combout          ;
+; |cpld_code|cnt_p[17]    ; |cpld_code|cnt_p[17]~5           ; cout0            ;
+; |cpld_code|cnt_p[17]    ; |cpld_code|cnt_p[17]~5COUT1_97   ; cout1            ;
+; |cpld_code|cnt_p[18]    ; |cpld_code|cnt_p[18]~7           ; cout0            ;
+; |cpld_code|cnt_p[18]    ; |cpld_code|cnt_p[18]~7COUT1_99   ; cout1            ;
+; |cpld_code|cnt_p[19]    ; |cpld_code|cnt_p[19]~9           ; cout0            ;
+; |cpld_code|cnt_p[19]    ; |cpld_code|cnt_p[19]~9COUT1_101  ; cout1            ;
+; |cpld_code|LessThan0~1  ; |cpld_code|LessThan0~1           ; combout          ;
+; |cpld_code|cnt_p[21]    ; |cpld_code|cnt_p[21]~11          ; cout             ;
+; |cpld_code|cnt_p[22]    ; |cpld_code|cnt_p[22]~15          ; cout0            ;
+; |cpld_code|cnt_p[22]    ; |cpld_code|cnt_p[22]~15COUT1_105 ; cout1            ;
+; |cpld_code|cnt_p[11]    ; |cpld_code|cnt_p[11]~17          ; cout             ;
+; |cpld_code|cnt_p[10]    ; |cpld_code|cnt_p[10]~19          ; cout0            ;
+; |cpld_code|cnt_p[10]    ; |cpld_code|cnt_p[10]~19COUT1_87  ; cout1            ;
+; |cpld_code|cnt_p[12]    ; |cpld_code|cnt_p[12]~21          ; cout0            ;
+; |cpld_code|cnt_p[12]    ; |cpld_code|cnt_p[12]~21COUT1_89  ; cout1            ;
+; |cpld_code|cnt_p[13]    ; |cpld_code|cnt_p[13]~23          ; cout0            ;
+; |cpld_code|cnt_p[13]    ; |cpld_code|cnt_p[13]~23COUT1_91  ; cout1            ;
+; |cpld_code|LessThan0~2  ; |cpld_code|LessThan0~2           ; combout          ;
+; |cpld_code|cnt_p[16]    ; |cpld_code|cnt_p[16]~25          ; cout             ;
+; |cpld_code|cnt_p[14]    ; |cpld_code|cnt_p[14]~27          ; cout0            ;
+; |cpld_code|cnt_p[14]    ; |cpld_code|cnt_p[14]~27COUT1_93  ; cout1            ;
+; |cpld_code|cnt_p[15]    ; |cpld_code|cnt_p[15]~29          ; cout0            ;
+; |cpld_code|cnt_p[15]    ; |cpld_code|cnt_p[15]~29COUT1_95  ; cout1            ;
+; |cpld_code|LessThan0~3  ; |cpld_code|LessThan0~3           ; combout          ;
+; |cpld_code|LessThan0~4  ; |cpld_code|LessThan0~4           ; combout          ;
+; |cpld_code|LessThan0~5  ; |cpld_code|LessThan0~5           ; combout          ;
+; |cpld_code|LessThan0~6  ; |cpld_code|LessThan0~6           ; combout          ;
+; |cpld_code|cnt_p[9]     ; |cpld_code|cnt_p[9]~31           ; cout0            ;
+; |cpld_code|cnt_p[9]     ; |cpld_code|cnt_p[9]~31COUT1_85   ; cout1            ;
+; |cpld_code|LessThan0~7  ; |cpld_code|LessThan0~7           ; combout          ;
+; |cpld_code|cnt_p[2]     ; |cpld_code|cnt_p[2]~37COUT1_73   ; cout1            ;
+; |cpld_code|cnt_p[3]     ; |cpld_code|cnt_p[3]~39COUT1_75   ; cout1            ;
+; |cpld_code|LessThan0~8  ; |cpld_code|LessThan0~8           ; combout          ;
+; |cpld_code|cnt_p[4]     ; |cpld_code|cnt_p[4]~41           ; cout0            ;
+; |cpld_code|cnt_p[4]     ; |cpld_code|cnt_p[4]~41COUT1_77   ; cout1            ;
+; |cpld_code|cnt_p[5]     ; |cpld_code|cnt_p[5]~43           ; cout0            ;
+; |cpld_code|cnt_p[5]     ; |cpld_code|cnt_p[5]~43COUT1_79   ; cout1            ;
+; |cpld_code|cnt_p[6]     ; |cpld_code|cnt_p[6]~45           ; cout             ;
+; |cpld_code|cnt_p[7]     ; |cpld_code|cnt_p[7]~47           ; cout0            ;
+; |cpld_code|cnt_p[7]     ; |cpld_code|cnt_p[7]~47COUT1_81   ; cout1            ;
+; |cpld_code|LessThan0~9  ; |cpld_code|LessThan0~9           ; combout          ;
+; |cpld_code|cnt_p[8]     ; |cpld_code|cnt_p[8]~49           ; cout0            ;
+; |cpld_code|cnt_p[8]     ; |cpld_code|cnt_p[8]~49COUT1_83   ; cout1            ;
+; |cpld_code|LessThan0~10 ; |cpld_code|LessThan0~10          ; combout          ;
+; |cpld_code|f_1          ; |cpld_code|LessThan0~11          ; combout          ;
+; |cpld_code|f_1          ; |cpld_code|f_1                   ; regout           ;
+; |cpld_code|scan         ; |cpld_code|scan                  ; padio            ;
+; |cpld_code|seg_out[0]   ; |cpld_code|seg_out[0]            ; padio            ;
+; |cpld_code|seg_out[1]   ; |cpld_code|seg_out[1]            ; padio            ;
+; |cpld_code|seg_out[2]   ; |cpld_code|seg_out[2]            ; padio            ;
+; |cpld_code|seg_out[3]   ; |cpld_code|seg_out[3]            ; padio            ;
+; |cpld_code|seg_out[4]   ; |cpld_code|seg_out[4]            ; padio            ;
+; |cpld_code|seg_out[5]   ; |cpld_code|seg_out[5]            ; padio            ;
+; |cpld_code|seg_out[6]   ; |cpld_code|seg_out[6]            ; padio            ;
+; |cpld_code|seg_out[7]   ; |cpld_code|seg_out[7]            ; padio            ;
++-------------------------+----------------------------------+------------------+
 
 
 +---------------------+
@@ -150,17 +290,21 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II Simulator
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Thu Dec 21 10:55:49 2023
+    Info: Processing started: Thu Dec 28 11:33:51 2023
 Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off cpld_code -c cpld_code
 Info: Using vector source file "C:/Users/User/Desktop/cpld_code/cpld_code.vwf"
+Warning: Ignored node in vector source file. Can't find corresponding node name "CLR" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "D" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "PR" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "Q" in design.
 Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
 Info: Simulation partitioned into 1 sub-simulations
-Info: Simulation coverage is      85.71 %
-Info: Number of transitions in simulation is 47
-Info: Quartus II Simulator was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 155 megabytes
-    Info: Processing ended: Thu Dec 21 10:55:49 2023
+Info: Simulation coverage is       7.89 %
+Info: Number of transitions in simulation is 71
+Info: Quartus II Simulator was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 156 megabytes
+    Info: Processing ended: Thu Dec 28 11:33:51 2023
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
