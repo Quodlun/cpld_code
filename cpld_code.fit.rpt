@@ -1,5 +1,5 @@
 Fitter report for cpld_code
-Thu Dec 28 11:33:44 2023
+Thu Dec 28 11:51:37 2023
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -56,7 +56,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------+
 ; Fitter Summary                                                       ;
 +-----------------------+----------------------------------------------+
-; Fitter Status         ; Successful - Thu Dec 28 11:33:44 2023        ;
+; Fitter Status         ; Successful - Thu Dec 28 11:51:37 2023        ;
 ; Quartus II Version    ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name         ; cpld_code                                    ;
 ; Top-level Entity Name ; cpld_code                                    ;
@@ -150,10 +150,10 @@ The pin-out file can be found in C:/Users/User/Desktop/cpld_code/cpld_code.pin.
 ;     -- Combinational with a register        ; 30                 ;
 ;                                             ;                    ;
 ; Logic element usage by number of LUT inputs ;                    ;
-;     -- 4 input functions                    ; 19                 ;
-;     -- 3 input functions                    ; 2                  ;
+;     -- 4 input functions                    ; 20                 ;
+;     -- 3 input functions                    ; 0                  ;
 ;     -- 2 input functions                    ; 26                 ;
-;     -- 1 input functions                    ; 1                  ;
+;     -- 1 input functions                    ; 2                  ;
 ;     -- 0 input functions                    ; 0                  ;
 ;                                             ;                    ;
 ; Logic elements by mode                      ;                    ;
@@ -165,7 +165,7 @@ The pin-out file can be found in C:/Users/User/Desktop/cpld_code/cpld_code.pin.
 ;     -- asynchronous clear/load mode         ; 0                  ;
 ;                                             ;                    ;
 ; Total registers                             ; 30 / 1,270 ( 2 % ) ;
-; Total LABs                                  ; 7 / 127 ( 6 % )    ;
+; Total LABs                                  ; 6 / 127 ( 5 % )    ;
 ; Logic elements in carry chains              ; 25                 ;
 ; User inserted logic elements                ; 0                  ;
 ; Virtual pins                                ; 0                  ;
@@ -175,14 +175,14 @@ The pin-out file can be found in C:/Users/User/Desktop/cpld_code/cpld_code.pin.
 ; UFM blocks                                  ; 0 / 1 ( 0 % )      ;
 ; Global clocks                               ; 1 / 4 ( 25 % )     ;
 ; JTAGs                                       ; 0 / 1 ( 0 % )      ;
-; Average interconnect usage (total/H/V)      ; 1% / 1% / 1%       ;
-; Peak interconnect usage (total/H/V)         ; 1% / 1% / 1%       ;
+; Average interconnect usage (total/H/V)      ; 1% / 2% / 1%       ;
+; Peak interconnect usage (total/H/V)         ; 2% / 2% / 2%       ;
 ; Maximum fan-out node                        ; clk                ;
 ; Maximum fan-out                             ; 30                 ;
 ; Highest non-global fan-out signal           ; LessThan0~11       ;
 ; Highest non-global fan-out                  ; 25                 ;
-; Total fan-out                               ; 219                ;
-; Average fan-out                             ; 3.78               ;
+; Total fan-out                               ; 218                ;
+; Average fan-out                             ; 3.76               ;
 +---------------------------------------------+--------------------+
 
 
@@ -427,9 +427,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------+--------------+---------+--------------+--------+----------------------+------------------+
 ; Name         ; Location     ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ;
 +--------------+--------------+---------+--------------+--------+----------------------+------------------+
-; LessThan0~11 ; LC_X14_Y9_N6 ; 25      ; Sync. clear  ; no     ; --                   ; --               ;
+; LessThan0~11 ; LC_X16_Y7_N9 ; 25      ; Sync. clear  ; no     ; --                   ; --               ;
 ; clk          ; PIN_20       ; 30      ; Clock        ; yes    ; Global Clock         ; GCLK1            ;
-; f_1          ; LC_X14_Y9_N6 ; 4       ; Clock enable ; no     ; --                   ; --               ;
+; f_1          ; LC_X16_Y7_N9 ; 4       ; Clock enable ; no     ; --                   ; --               ;
 +--------------+--------------+---------+--------------+--------+----------------------+------------------+
 
 
@@ -448,21 +448,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                ; Fan-Out   ;
 +---------------------+-----------+
 ; LessThan0~11        ; 25        ;
-; bcd[0]              ; 11        ;
-; bcd[1]              ; 11        ;
-; bcd[3]              ; 11        ;
+; bcd_cnt[0]          ; 11        ;
 ; bcd[2]              ; 10        ;
+; bcd[1]              ; 10        ;
+; bcd[3]              ; 10        ;
 ; cnt_p[6]~45         ; 5         ;
 ; cnt_p[1]~35         ; 5         ;
-; cnt_p[16]~25        ; 5         ;
-; cnt_p[11]~17        ; 5         ;
+; cnt_p[16]~29        ; 5         ;
+; cnt_p[11]~21        ; 5         ;
 ; f_1                 ; 4         ;
-; cnt_p[15]           ; 3         ;
-; cnt_p[14]           ; 3         ;
+; cnt_p[23]           ; 4         ;
 ; cnt_p[16]           ; 3         ;
 ; cnt_p[11]           ; 3         ;
+; cnt_p[15]           ; 3         ;
+; cnt_p[14]           ; 3         ;
 ; cnt_p[21]~11        ; 3         ;
-; cnt_p[23]           ; 3         ;
 ; cnt_p[20]           ; 3         ;
 ; cnt_p[8]            ; 2         ;
 ; cnt_p[7]            ; 2         ;
@@ -477,8 +477,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; cnt_p[13]           ; 2         ;
 ; cnt_p[12]           ; 2         ;
 ; cnt_p[10]           ; 2         ;
-; cnt_p[22]           ; 2         ;
 ; cnt_p[24]           ; 2         ;
+; cnt_p[22]           ; 2         ;
 ; cnt_p[21]           ; 2         ;
 ; cnt_p[19]           ; 2         ;
 ; cnt_p[18]           ; 2         ;
@@ -509,24 +509,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Direct links               ; 6 / 3,938 ( < 1 % )  ;
 ; Global clocks              ; 1 / 4 ( 25 % )       ;
 ; LAB clocks                 ; 4 / 72 ( 6 % )       ;
-; LUT chains                 ; 2 / 1,143 ( < 1 % )  ;
-; Local interconnects        ; 42 / 3,938 ( 1 % )   ;
-; R4s                        ; 39 / 2,832 ( 1 % )   ;
+; LUT chains                 ; 1 / 1,143 ( < 1 % )  ;
+; Local interconnects        ; 40 / 3,938 ( 1 % )   ;
+; R4s                        ; 54 / 2,832 ( 2 % )   ;
 +----------------------------+----------------------+
 
 
 +--------------------------------------------------------------------------+
 ; LAB Logic Elements                                                       ;
 +--------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 6.86) ; Number of LABs  (Total = 7) ;
+; Number of Logic Elements  (Average = 8.00) ; Number of LABs  (Total = 6) ;
 +--------------------------------------------+-----------------------------+
 ; 1                                          ; 1                           ;
-; 2                                          ; 1                           ;
+; 2                                          ; 0                           ;
 ; 3                                          ; 0                           ;
 ; 4                                          ; 0                           ;
-; 5                                          ; 1                           ;
+; 5                                          ; 0                           ;
 ; 6                                          ; 0                           ;
-; 7                                          ; 0                           ;
+; 7                                          ; 1                           ;
 ; 8                                          ; 0                           ;
 ; 9                                          ; 0                           ;
 ; 10                                         ; 4                           ;
@@ -536,7 +536,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------+
 ; LAB-wide Signals                                                 ;
 +------------------------------------+-----------------------------+
-; LAB-wide Signals  (Average = 1.29) ; Number of LABs  (Total = 7) ;
+; LAB-wide Signals  (Average = 1.50) ; Number of LABs  (Total = 6) ;
 +------------------------------------+-----------------------------+
 ; 1 Clock                            ; 5                           ;
 ; 1 Clock enable                     ; 1                           ;
@@ -547,17 +547,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 7.00) ; Number of LABs  (Total = 7) ;
+; Number of Signals Sourced  (Average = 8.17) ; Number of LABs  (Total = 6) ;
 +---------------------------------------------+-----------------------------+
 ; 0                                           ; 0                           ;
 ; 1                                           ; 1                           ;
-; 2                                           ; 1                           ;
+; 2                                           ; 0                           ;
 ; 3                                           ; 0                           ;
 ; 4                                           ; 0                           ;
 ; 5                                           ; 0                           ;
-; 6                                           ; 1                           ;
+; 6                                           ; 0                           ;
 ; 7                                           ; 0                           ;
-; 8                                           ; 0                           ;
+; 8                                           ; 1                           ;
 ; 9                                           ; 0                           ;
 ; 10                                          ; 4                           ;
 +---------------------------------------------+-----------------------------+
@@ -566,15 +566,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                       ;
 +-------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 4.71) ; Number of LABs  (Total = 7) ;
+; Number of Signals Sourced Out  (Average = 5.00) ; Number of LABs  (Total = 6) ;
 +-------------------------------------------------+-----------------------------+
 ; 0                                               ; 0                           ;
 ; 1                                               ; 2                           ;
-; 2                                               ; 1                           ;
-; 3                                               ; 1                           ;
-; 4                                               ; 0                           ;
+; 2                                               ; 0                           ;
+; 3                                               ; 0                           ;
+; 4                                               ; 2                           ;
 ; 5                                               ; 0                           ;
-; 6                                               ; 1                           ;
+; 6                                               ; 0                           ;
 ; 7                                               ; 0                           ;
 ; 8                                               ; 0                           ;
 ; 9                                               ; 0                           ;
@@ -585,20 +585,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 5.00) ; Number of LABs  (Total = 7) ;
+; Number of Distinct Inputs  (Average = 5.33) ; Number of LABs  (Total = 6) ;
 +---------------------------------------------+-----------------------------+
 ; 0                                           ; 0                           ;
 ; 1                                           ; 0                           ;
 ; 2                                           ; 1                           ;
 ; 3                                           ; 1                           ;
-; 4                                           ; 1                           ;
-; 5                                           ; 3                           ;
+; 4                                           ; 2                           ;
+; 5                                           ; 1                           ;
 ; 6                                           ; 0                           ;
 ; 7                                           ; 0                           ;
 ; 8                                           ; 0                           ;
 ; 9                                           ; 0                           ;
 ; 10                                          ; 0                           ;
-; 11                                          ; 1                           ;
+; 11                                          ; 0                           ;
+; 12                                          ; 0                           ;
+; 13                                          ; 0                           ;
+; 14                                          ; 1                           ;
 +---------------------------------------------+-----------------------------+
 
 
@@ -630,7 +633,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Thu Dec 28 11:33:44 2023
+    Info: Processing started: Thu Dec 28 11:51:37 2023
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off cpld_code -c cpld_code
 Info: Selected device EPM1270T144C5 for design "cpld_code"
 Info: Low junction temperature is 0 degrees C
@@ -667,25 +670,24 @@ Info: Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement operations beginning
 Info: Fitter placement was successful
 Info: Fitter placement operations ending: elapsed time is 00:00:00
-Info: Estimated most critical path is register to register delay of 11.926 ns
-    Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LAB_X14_Y8; Fanout = 5; REG Node = 'cnt_p[15]'
-    Info: 2: + IC(1.967 ns) + CELL(0.511 ns) = 2.478 ns; Loc. = LAB_X14_Y9; Fanout = 1; COMB Node = 'LessThan0~3'
-    Info: 3: + IC(2.102 ns) + CELL(0.200 ns) = 4.780 ns; Loc. = LAB_X15_Y8; Fanout = 1; COMB Node = 'LessThan0~4'
-    Info: 4: + IC(0.983 ns) + CELL(0.200 ns) = 5.963 ns; Loc. = LAB_X15_Y8; Fanout = 2; COMB Node = 'LessThan0~5'
-    Info: 5: + IC(1.562 ns) + CELL(0.740 ns) = 8.265 ns; Loc. = LAB_X14_Y9; Fanout = 25; COMB Node = 'LessThan0~11'
-    Info: 6: + IC(1.901 ns) + CELL(1.760 ns) = 11.926 ns; Loc. = LAB_X15_Y8; Fanout = 5; REG Node = 'cnt_p[20]'
-    Info: Total cell delay = 3.411 ns ( 28.60 % )
-    Info: Total interconnect delay = 8.515 ns ( 71.40 % )
+Info: Estimated most critical path is register to register delay of 13.315 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LAB_X14_Y3; Fanout = 4; REG Node = 'cnt_p[11]'
+    Info: 2: + IC(2.920 ns) + CELL(0.200 ns) = 3.120 ns; Loc. = LAB_X16_Y7; Fanout = 1; COMB Node = 'LessThan0~7'
+    Info: 3: + IC(2.032 ns) + CELL(0.914 ns) = 6.066 ns; Loc. = LAB_X13_Y3; Fanout = 2; COMB Node = 'LessThan0~10'
+    Info: 4: + IC(2.743 ns) + CELL(0.200 ns) = 9.009 ns; Loc. = LAB_X16_Y7; Fanout = 25; COMB Node = 'LessThan0~11'
+    Info: 5: + IC(2.546 ns) + CELL(1.760 ns) = 13.315 ns; Loc. = LAB_X14_Y3; Fanout = 4; REG Node = 'cnt_p[16]'
+    Info: Total cell delay = 3.074 ns ( 23.09 % )
+    Info: Total interconnect delay = 10.241 ns ( 76.91 % )
 Info: Fitter routing operations beginning
 Info: Average interconnect usage is 1% of the available device resources
-    Info: Peak interconnect usage is 1% of the available device resources in the region that extends from location X9_Y0 to location X17_Y11
+    Info: Peak interconnect usage is 2% of the available device resources in the region that extends from location X9_Y0 to location X17_Y11
 Info: Fitter routing operations ending: elapsed time is 00:00:00
 Info: The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info: Optimizations that may affect the design's routability were skipped
     Info: Optimizations that may affect the design's timing were skipped
 Info: Quartus II Fitter was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 252 megabytes
-    Info: Processing ended: Thu Dec 28 11:33:44 2023
+    Info: Processing ended: Thu Dec 28 11:51:37 2023
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 

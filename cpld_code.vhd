@@ -44,11 +44,11 @@ begin
 	begin
 		if ( clk'event and clk = '1' ) then
 			if ( f_1 = '1' ) then
-				if ( bcd_cnt < 9 ) then
-					bcd_cnt	:= bcd_cnt + 1;
+				if ( bcd_cnt > 0 ) then
+					bcd_cnt	:= bcd_cnt - 1;
 
 				else
-					bcd_cnt := ( others => '0' );
+					bcd_cnt := "1001";
 					
 				end if;
 				bcd <= bcd_cnt;

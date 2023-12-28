@@ -15,7 +15,7 @@ end cpld_code;
 
 architecture beh of cpld_code is
 	signal bcd : std_logic_vector ( 3 downto 0 );
-	 f_1 : std_logic;
+	signal f_1 : std_logic;
 
 begin
 	scan <= '1';
