@@ -55,15 +55,9 @@ set_global_assignment -name MISC_FILE "C:/Users/User/Desktop/cpld_code/cpld_code
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
 set_global_assignment -name AUTO_RESTART_CONFIGURATION OFF
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
-set_location_assignment PIN_13 -to seg_out[7]
-set_location_assignment PIN_15 -to seg_out[6]
-set_location_assignment PIN_18 -to seg_out[5]
-set_location_assignment PIN_22 -to seg_out[4]
-set_location_assignment PIN_24 -to seg_out[3]
-set_location_assignment PIN_28 -to seg_out[2]
-set_location_assignment PIN_30 -to seg_out[1]
-set_location_assignment PIN_32 -to seg_out[0]
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
 set_global_assignment -name SIMULATION_MODE TIMING
-set_location_assignment PIN_21 -to scan
 set_location_assignment PIN_20 -to clk
+set_location_assignment PIN_122 -to led
+set_location_assignment PIN_139 -to sw_gnd
+set_location_assignment PIN_11 -to sw_in

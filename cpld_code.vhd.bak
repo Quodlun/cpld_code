@@ -7,30 +7,65 @@ entity cpld_code is
 generic ( fmax : integer := 24E6 );
 port (
 	clk			: in std_logic;
-	pr, clr		: in std_logic;
-	serial_in	: in std_logic;
+	sw_in		: in std_logic;
 	
-	q			: buffer std_logic_vector ( 3 downto 0 )
+	led			: out std_logic;
+	q			: out std_logic
 );
 end cpld_code;
 
 architecture beh of cpld_code is
+	signal fo1k		: std_logic;
+	signal q1, q2	: std_logic;
+	signal wave_pp	: std_logic;
+	signal wave_np	: std_logic;
 
 begin
+	sw_gnd <= '0';
+	
+	process ( clk )
+	
+	variable cnt_p	: std_logic_vector ( 15 downto 0 );
+	variable fo		: integer := 1E3;
+	
+	begin
+		if ( clk'event and clk = '1' ) then
+			if ( cnt_p < fmax / fo - 1 ) then
+				fo1k	<= '0';
+				cnt_p	:= cnt_p + 1;
+				
+			else
+				fo1k	<= '1';
+				cnt_p	:= ( others => '0' );
+				
+			end if;
+		end if;
+	end process;
+	
 	process ( clk )
 	begin
-		if ( pr = '1' ) then
-			q <= "1111";
-			
-		elsif ( clr = '1' ) then
-			q <= "0000";
-			
-		elsif ( clk event and clk clk = '1' ) then
-			q ( 3 ) <= q ( 2 );
-			q ( 2 ) <= q ( 1 );
-			q ( 1 ) <= q ( 0 );
-			q ( 0 ) <= serial_in;
-			
+		if (clk'event and clk = '1' ) then
+			if ( fo1k = '1' ) then
+				q2 <= q1;
+				q1 <= not sw_in;
+				
+			end if;
+		end if;
+	end process;
+	
+	wave_pp	<= q1 and ( not q2 );
+	wave_np	<= ( not q1 ) and q2;
+	
+	process ( clk )
+	begin
+		if ( clk'event and clk = '1' ) then
+			if ( wave_pp = '1' ) then
+				led <= '1';
+				
+			elsif ( wave_np = '1' ) then
+				led <= '0';
+				
+			end if;
 		end if;
 	end process;
 end beh;

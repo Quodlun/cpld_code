@@ -1,5 +1,5 @@
 Fitter report for cpld_code
-Thu Dec 28 12:06:59 2023
+Thu Jan 04 11:02:33 2024
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -10,28 +10,27 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   2. Fitter Summary
   3. Fitter Settings
   4. Parallel Compilation
-  5. Ignored Assignments
-  6. Pin-Out File
-  7. Fitter Resource Usage Summary
-  8. Input Pins
-  9. Output Pins
- 10. I/O Bank Usage
- 11. All Package Pins
- 12. Output Pin Default Load For Reported TCO
- 13. Fitter Resource Utilization by Entity
- 14. Delay Chain Summary
- 15. Control Signals
- 16. Global & Other Fast Signals
- 17. Non-Global High Fan-Out Signals
- 18. Interconnect Usage Summary
- 19. LAB Logic Elements
- 20. LAB-wide Signals
- 21. LAB Signals Sourced
- 22. LAB Signals Sourced Out
- 23. LAB Distinct Inputs
- 24. Fitter Device Options
- 25. Estimated Delay Added for Hold Timing
- 26. Fitter Messages
+  5. Pin-Out File
+  6. Fitter Resource Usage Summary
+  7. Input Pins
+  8. Output Pins
+  9. I/O Bank Usage
+ 10. All Package Pins
+ 11. Output Pin Default Load For Reported TCO
+ 12. Fitter Resource Utilization by Entity
+ 13. Delay Chain Summary
+ 14. Control Signals
+ 15. Global & Other Fast Signals
+ 16. Non-Global High Fan-Out Signals
+ 17. Interconnect Usage Summary
+ 18. LAB Logic Elements
+ 19. LAB-wide Signals
+ 20. LAB Signals Sourced
+ 21. LAB Signals Sourced Out
+ 22. LAB Distinct Inputs
+ 23. Fitter Device Options
+ 24. Estimated Delay Added for Hold Timing
+ 25. Fitter Messages
 
 
 
@@ -57,15 +56,15 @@ applicable agreement for further details.
 +----------------------------------------------------------------------+
 ; Fitter Summary                                                       ;
 +-----------------------+----------------------------------------------+
-; Fitter Status         ; Successful - Thu Dec 28 12:06:59 2023        ;
+; Fitter Status         ; Successful - Thu Jan 04 11:02:33 2024        ;
 ; Quartus II Version    ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name         ; cpld_code                                    ;
 ; Top-level Entity Name ; cpld_code                                    ;
 ; Family                ; MAX II                                       ;
 ; Device                ; EPM1270T144C5                                ;
 ; Timing Models         ; Final                                        ;
-; Total logic elements  ; 5 / 1,270 ( < 1 % )                          ;
-; Total pins            ; 8 / 116 ( 7 % )                              ;
+; Total logic elements  ; 25 / 1,270 ( 2 % )                           ;
+; Total pins            ; 4 / 116 ( 3 % )                              ;
 ; Total virtual pins    ; 0                                            ;
 ; UFM blocks            ; 0 / 1 ( 0 % )                                ;
 +-----------------------+----------------------------------------------+
@@ -134,110 +133,89 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------+
-; Ignored Assignments                                                                    ;
-+----------+----------------+--------------+------------+---------------+----------------+
-; Name     ; Ignored Entity ; Ignored From ; Ignored To ; Ignored Value ; Ignored Source ;
-+----------+----------------+--------------+------------+---------------+----------------+
-; Location ;                ;              ; scan       ; PIN_21        ; QSF Assignment ;
-; Location ;                ;              ; seg_out[0] ; PIN_32        ; QSF Assignment ;
-; Location ;                ;              ; seg_out[1] ; PIN_30        ; QSF Assignment ;
-; Location ;                ;              ; seg_out[2] ; PIN_28        ; QSF Assignment ;
-; Location ;                ;              ; seg_out[3] ; PIN_24        ; QSF Assignment ;
-; Location ;                ;              ; seg_out[4] ; PIN_22        ; QSF Assignment ;
-; Location ;                ;              ; seg_out[5] ; PIN_18        ; QSF Assignment ;
-; Location ;                ;              ; seg_out[6] ; PIN_15        ; QSF Assignment ;
-; Location ;                ;              ; seg_out[7] ; PIN_13        ; QSF Assignment ;
-+----------+----------------+--------------+------------+---------------+----------------+
-
-
 +--------------+
 ; Pin-Out File ;
 +--------------+
 The pin-out file can be found in C:/Users/User/Desktop/cpld_code/cpld_code.pin.
 
 
-+-------------------------------------------------------------------+
-; Fitter Resource Usage Summary                                     ;
-+---------------------------------------------+---------------------+
-; Resource                                    ; Usage               ;
-+---------------------------------------------+---------------------+
-; Total logic elements                        ; 5 / 1,270 ( < 1 % ) ;
-;     -- Combinational with no register       ; 1                   ;
-;     -- Register only                        ; 4                   ;
-;     -- Combinational with a register        ; 0                   ;
-;                                             ;                     ;
-; Logic element usage by number of LUT inputs ;                     ;
-;     -- 4 input functions                    ; 0                   ;
-;     -- 3 input functions                    ; 0                   ;
-;     -- 2 input functions                    ; 1                   ;
-;     -- 1 input functions                    ; 0                   ;
-;     -- 0 input functions                    ; 0                   ;
-;                                             ;                     ;
-; Logic elements by mode                      ;                     ;
-;     -- normal mode                          ; 5                   ;
-;     -- arithmetic mode                      ; 0                   ;
-;     -- qfbk mode                            ; 0                   ;
-;     -- register cascade mode                ; 0                   ;
-;     -- synchronous clear/load mode          ; 0                   ;
-;     -- asynchronous clear/load mode         ; 4                   ;
-;                                             ;                     ;
-; Total registers                             ; 4 / 1,270 ( < 1 % ) ;
-; Total LABs                                  ; 2 / 127 ( 2 % )     ;
-; Logic elements in carry chains              ; 0                   ;
-; User inserted logic elements                ; 0                   ;
-; Virtual pins                                ; 0                   ;
-; I/O pins                                    ; 8 / 116 ( 7 % )     ;
-;     -- Clock pins                           ; 2 / 4 ( 50 % )      ;
-; Global signals                              ; 3                   ;
-; UFM blocks                                  ; 0 / 1 ( 0 % )       ;
-; Global clocks                               ; 3 / 4 ( 75 % )      ;
-; JTAGs                                       ; 0 / 1 ( 0 % )       ;
-; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%        ;
-; Peak interconnect usage (total/H/V)         ; 0% / 0% / 0%        ;
-; Maximum fan-out node                        ; pr                  ;
-; Maximum fan-out                             ; 5                   ;
-; Highest non-global fan-out signal           ; q[0]~reg0           ;
-; Highest non-global fan-out                  ; 2                   ;
-; Total fan-out                               ; 22                  ;
-; Average fan-out                             ; 1.69                ;
-+---------------------------------------------+---------------------+
++------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                    ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+; Total logic elements                        ; 25 / 1,270 ( 2 % ) ;
+;     -- Combinational with no register       ; 5                  ;
+;     -- Register only                        ; 1                  ;
+;     -- Combinational with a register        ; 19                 ;
+;                                             ;                    ;
+; Logic element usage by number of LUT inputs ;                    ;
+;     -- 4 input functions                    ; 5                  ;
+;     -- 3 input functions                    ; 2                  ;
+;     -- 2 input functions                    ; 15                 ;
+;     -- 1 input functions                    ; 2                  ;
+;     -- 0 input functions                    ; 0                  ;
+;                                             ;                    ;
+; Logic elements by mode                      ;                    ;
+;     -- normal mode                          ; 10                 ;
+;     -- arithmetic mode                      ; 15                 ;
+;     -- qfbk mode                            ; 0                  ;
+;     -- register cascade mode                ; 0                  ;
+;     -- synchronous clear/load mode          ; 16                 ;
+;     -- asynchronous clear/load mode         ; 0                  ;
+;                                             ;                    ;
+; Total registers                             ; 20 / 1,270 ( 2 % ) ;
+; Total LABs                                  ; 3 / 127 ( 2 % )    ;
+; Logic elements in carry chains              ; 16                 ;
+; User inserted logic elements                ; 0                  ;
+; Virtual pins                                ; 0                  ;
+; I/O pins                                    ; 4 / 116 ( 3 % )    ;
+;     -- Clock pins                           ; 1 / 4 ( 25 % )     ;
+; Global signals                              ; 1                  ;
+; UFM blocks                                  ; 0 / 1 ( 0 % )      ;
+; Global clocks                               ; 1 / 4 ( 25 % )     ;
+; JTAGs                                       ; 0 / 1 ( 0 % )      ;
+; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%       ;
+; Peak interconnect usage (total/H/V)         ; 1% / 0% / 1%       ;
+; Maximum fan-out node                        ; clk                ;
+; Maximum fan-out                             ; 20                 ;
+; Highest non-global fan-out signal           ; LessThan0~5        ;
+; Highest non-global fan-out                  ; 16                 ;
+; Total fan-out                               ; 108                ;
+; Average fan-out                             ; 3.72               ;
++---------------------------------------------+--------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Input Pins                                                                                                                                                                                                       ;
-+-----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
-; Name      ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Location assigned by ;
-+-----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
-; clk       ; 20    ; 1        ; 0            ; 7            ; 6           ; 4                     ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
-; clr       ; 39    ; 4        ; 2            ; 3            ; 0           ; 1                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
-; pr        ; 18    ; 1        ; 0            ; 7            ; 5           ; 5                     ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
-; serial_in ; 79    ; 3        ; 17           ; 3            ; 1           ; 1                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
-+-----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                                                                                                   ;
++-------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
+; Name  ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Location assigned by ;
++-------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
+; clk   ; 20    ; 1        ; 0            ; 7            ; 6           ; 20                    ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; sw_in ; 11    ; 1        ; 0            ; 8            ; 6           ; 1                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
++-------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Output Pins                                                                                                                                                                                                                                                                                                            ;
-+------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
-; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Slow Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Fast Output Connection ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
-+------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
-; q[0] ; 3     ; 1        ; 0            ; 10           ; 5           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
-; q[1] ; 138   ; 2        ; 5            ; 11           ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
-; q[2] ; 95    ; 3        ; 17           ; 6            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
-; q[3] ; 37    ; 4        ; 1            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
-+------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                                                                                                                                                              ;
++--------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+; Name   ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Slow Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Fast Output Connection ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
++--------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+; led    ; 122   ; 2        ; 10           ; 11           ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; sw_gnd ; 139   ; 2        ; 5            ; 11           ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
++--------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
 
 
-+-----------------------------------------------------------+
-; I/O Bank Usage                                            ;
-+----------+-----------------+---------------+--------------+
-; I/O Bank ; Usage           ; VCCIO Voltage ; VREF Voltage ;
-+----------+-----------------+---------------+--------------+
-; 1        ; 3 / 26 ( 12 % ) ; 3.3V          ; --           ;
-; 2        ; 1 / 30 ( 3 % )  ; 3.3V          ; --           ;
-; 3        ; 2 / 30 ( 7 % )  ; 3.3V          ; --           ;
-; 4        ; 2 / 30 ( 7 % )  ; 3.3V          ; --           ;
-+----------+-----------------+---------------+--------------+
++----------------------------------------------------------+
+; I/O Bank Usage                                           ;
++----------+----------------+---------------+--------------+
+; I/O Bank ; Usage          ; VCCIO Voltage ; VREF Voltage ;
++----------+----------------+---------------+--------------+
+; 1        ; 2 / 26 ( 8 % ) ; 3.3V          ; --           ;
+; 2        ; 2 / 30 ( 7 % ) ; 3.3V          ; --           ;
+; 3        ; 0 / 30 ( 0 % ) ; 3.3V          ; --           ;
+; 4        ; 0 / 30 ( 0 % ) ; 3.3V          ; --           ;
++----------+----------------+---------------+--------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -247,7 +225,7 @@ The pin-out file can be found in C:/Users/User/Desktop/cpld_code/cpld_code.pin.
 +----------+------------+----------+----------------+--------+--------------+-----------+------------+-----------------+----------+--------------+
 ; 1        ; 2          ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 2        ; 3          ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
-; 3        ; 5          ; 1        ; q[0]           ; output ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
+; 3        ; 5          ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 4        ; 7          ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 5        ; 9          ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 6        ; 10         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
@@ -255,14 +233,14 @@ The pin-out file can be found in C:/Users/User/Desktop/cpld_code/cpld_code.pin.
 ; 8        ; 15         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 9        ;            ; 1        ; VCCIO1         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
 ; 10       ;            ;          ; GNDIO          ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
-; 11       ; 20         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 11       ; 20         ; 1        ; sw_in          ; input  ; 3.3-V LVTTL  ;           ; Row I/O    ; Y               ; no       ; Off          ;
 ; 12       ; 21         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 13       ; 22         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 14       ; 23         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 15       ; 24         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 16       ; 25         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 17       ;            ;          ; GNDINT         ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
-; 18       ; 26         ; 1        ; pr             ; input  ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
+; 18       ; 26         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 19       ;            ;          ; VCCINT         ; power  ;              ; 2.5V/3.3V ; --         ;                 ; --       ; --           ;
 ; 20       ; 27         ; 1        ; clk            ; input  ; 3.3-V LVTTL  ;           ; Row I/O    ; Y               ; no       ; Off          ;
 ; 21       ; 28         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
@@ -281,9 +259,9 @@ The pin-out file can be found in C:/Users/User/Desktop/cpld_code/cpld_code.pin.
 ; 34       ; 51         ; 1        ; #TDI           ; input  ;              ;           ; --         ;                 ; --       ; --           ;
 ; 35       ; 52         ; 1        ; #TCK           ; input  ;              ;           ; --         ;                 ; --       ; --           ;
 ; 36       ; 53         ; 1        ; #TDO           ; output ;              ;           ; --         ;                 ; --       ; --           ;
-; 37       ; 56         ; 4        ; q[3]           ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 37       ; 56         ; 4        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 38       ; 57         ; 4        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
-; 39       ; 60         ; 4        ; clr            ; input  ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 39       ; 60         ; 4        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 40       ; 62         ; 4        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 41       ; 63         ; 4        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 42       ; 67         ; 4        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
@@ -323,7 +301,7 @@ The pin-out file can be found in C:/Users/User/Desktop/cpld_code/cpld_code.pin.
 ; 76       ; 115        ; 3        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 77       ; 118        ; 3        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 78       ; 122        ; 3        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
-; 79       ; 123        ; 3        ; serial_in      ; input  ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
+; 79       ; 123        ; 3        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 80       ; 124        ; 3        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 81       ; 127        ; 3        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 82       ;            ; 3        ; VCCIO3         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
@@ -339,7 +317,7 @@ The pin-out file can be found in C:/Users/User/Desktop/cpld_code/cpld_code.pin.
 ; 92       ;            ;          ; GNDINT         ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
 ; 93       ; 136        ; 3        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 94       ; 137        ; 3        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
-; 95       ; 138        ; 3        ; q[2]           ; output ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
+; 95       ; 138        ; 3        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 96       ; 139        ; 3        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 97       ; 140        ; 3        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
 ; 98       ; 141        ; 3        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
@@ -366,7 +344,7 @@ The pin-out file can be found in C:/Users/User/Desktop/cpld_code/cpld_code.pin.
 ; 119      ; 182        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 120      ; 183        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 121      ; 184        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
-; 122      ; 185        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 122      ; 185        ; 2        ; led            ; output ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
 ; 123      ; 186        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 124      ; 187        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 125      ; 188        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
@@ -382,8 +360,8 @@ The pin-out file can be found in C:/Users/User/Desktop/cpld_code/cpld_code.pin.
 ; 135      ;            ;          ; GNDIO          ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
 ; 136      ;            ; 2        ; VCCIO2         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
 ; 137      ; 199        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
-; 138      ; 200        ; 2        ; q[1]           ; output ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
-; 139      ; 201        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 138      ; 200        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 139      ; 201        ; 2        ; sw_gnd         ; output ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
 ; 140      ; 204        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 141      ; 205        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
 ; 142      ; 208        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
@@ -415,61 +393,99 @@ Note: User assignments will override these defaults. The user specified values a
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
-; |cpld_code                 ; 5 (5)       ; 4            ; 0          ; 8    ; 0            ; 1 (1)        ; 4 (4)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpld_code          ; work         ;
+; |cpld_code                 ; 25 (25)     ; 20           ; 0          ; 4    ; 0            ; 5 (5)        ; 1 (1)             ; 19 (19)          ; 16 (16)         ; 0 (0)      ; |cpld_code          ; work         ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------+
-; Delay Chain Summary                  ;
-+-----------+----------+---------------+
-; Name      ; Pin Type ; Pad to Core 0 ;
-+-----------+----------+---------------+
-; serial_in ; Input    ; (0)           ;
-; clk       ; Input    ; (0)           ;
-; clr       ; Input    ; (1)           ;
-; pr        ; Input    ; (1)           ;
-; q[0]      ; Output   ; --            ;
-; q[1]      ; Output   ; --            ;
-; q[2]      ; Output   ; --            ;
-; q[3]      ; Output   ; --            ;
-+-----------+----------+---------------+
++-----------------------------------+
+; Delay Chain Summary               ;
++--------+----------+---------------+
+; Name   ; Pin Type ; Pad to Core 0 ;
++--------+----------+---------------+
+; clk    ; Input    ; (0)           ;
+; sw_in  ; Input    ; (0)           ;
+; led    ; Output   ; --            ;
+; sw_gnd ; Output   ; --            ;
++--------+----------+---------------+
 
 
-+--------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                  ;
-+--------+-------------+---------+--------------+--------+----------------------+------------------+
-; Name   ; Location    ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ;
-+--------+-------------+---------+--------------+--------+----------------------+------------------+
-; clk    ; PIN_20      ; 4       ; Clock        ; yes    ; Global Clock         ; GCLK1            ;
-; pr     ; PIN_18      ; 5       ; Async. load  ; yes    ; Global Clock         ; GCLK0            ;
-; q[3]~0 ; LC_X6_Y5_N2 ; 4       ; Async. clear ; yes    ; Global Clock         ; GCLK3            ;
-+--------+-------------+---------+--------------+--------+----------------------+------------------+
++--------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                        ;
++-------------+--------------+---------+--------------+--------+----------------------+------------------+
+; Name        ; Location     ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ;
++-------------+--------------+---------+--------------+--------+----------------------+------------------+
+; LessThan0~5 ; LC_X13_Y8_N2 ; 16      ; Sync. clear  ; no     ; --                   ; --               ;
+; clk         ; PIN_20       ; 20      ; Clock        ; yes    ; Global Clock         ; GCLK1            ;
+; fo1k        ; LC_X13_Y8_N2 ; 2       ; Clock enable ; no     ; --                   ; --               ;
++-------------+--------------+---------+--------------+--------+----------------------+------------------+
 
 
-+--------------------------------------------------------------------------+
-; Global & Other Fast Signals                                              ;
-+--------+-------------+---------+----------------------+------------------+
-; Name   ; Location    ; Fan-Out ; Global Resource Used ; Global Line Name ;
-+--------+-------------+---------+----------------------+------------------+
-; clk    ; PIN_20      ; 4       ; Global Clock         ; GCLK1            ;
-; pr     ; PIN_18      ; 5       ; Global Clock         ; GCLK0            ;
-; q[3]~0 ; LC_X6_Y5_N2 ; 4       ; Global Clock         ; GCLK3            ;
-+--------+-------------+---------+----------------------+------------------+
++---------------------------------------------------------------------+
+; Global & Other Fast Signals                                         ;
++------+----------+---------+----------------------+------------------+
+; Name ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ;
++------+----------+---------+----------------------+------------------+
+; clk  ; PIN_20   ; 20      ; Global Clock         ; GCLK1            ;
++------+----------+---------+----------------------+------------------+
 
 
 +---------------------------------+
 ; Non-Global High Fan-Out Signals ;
-+-----------+---------------------+
-; Name      ; Fan-Out             ;
-+-----------+---------------------+
-; q[2]~reg0 ; 2                   ;
-; q[1]~reg0 ; 2                   ;
-; q[0]~reg0 ; 2                   ;
-; clr       ; 1                   ;
-; serial_in ; 1                   ;
-; q[3]~reg0 ; 1                   ;
-+-----------+---------------------+
++----------------------+----------+
+; Name                 ; Fan-Out  ;
++----------------------+----------+
+; LessThan0~5          ; 16       ;
+; cnt_p[7]~29          ; 5        ;
+; cnt_p[2]~11          ; 5        ;
+; cnt_p[12]~25         ; 3        ;
+; cnt_p[9]             ; 3        ;
+; cnt_p[13]            ; 3        ;
+; fo1k                 ; 2        ;
+; cnt_p[8]             ; 2        ;
+; cnt_p[7]             ; 2        ;
+; cnt_p[10]            ; 2        ;
+; cnt_p[12]            ; 2        ;
+; cnt_p[11]            ; 2        ;
+; cnt_p[15]            ; 2        ;
+; cnt_p[6]             ; 2        ;
+; cnt_p[3]             ; 2        ;
+; cnt_p[2]             ; 2        ;
+; cnt_p[1]             ; 2        ;
+; cnt_p[0]             ; 2        ;
+; cnt_p[5]             ; 2        ;
+; cnt_p[4]             ; 2        ;
+; cnt_p[14]            ; 2        ;
+; q1                   ; 2        ;
+; led~reg0             ; 2        ;
+; sw_in                ; 1        ;
+; LessThan0~4          ; 1        ;
+; LessThan0~3          ; 1        ;
+; cnt_p[8]~31COUT1_58  ; 1        ;
+; cnt_p[8]~31          ; 1        ;
+; cnt_p[10]~27COUT1_62 ; 1        ;
+; cnt_p[10]~27         ; 1        ;
+; cnt_p[11]~23COUT1_64 ; 1        ;
+; cnt_p[11]~23         ; 1        ;
+; LessThan0~2          ; 1        ;
+; LessThan0~1          ; 1        ;
+; cnt_p[6]~19COUT1_56  ; 1        ;
+; cnt_p[6]~19          ; 1        ;
+; cnt_p[9]~17COUT1_60  ; 1        ;
+; cnt_p[9]~17          ; 1        ;
+; cnt_p[13]~15COUT1_66 ; 1        ;
+; cnt_p[13]~15         ; 1        ;
+; LessThan0~0          ; 1        ;
+; cnt_p[3]~13COUT1_50  ; 1        ;
+; cnt_p[3]~13          ; 1        ;
+; cnt_p[1]~9COUT1_48   ; 1        ;
+; cnt_p[1]~9           ; 1        ;
+; cnt_p[0]~7COUT1_46   ; 1        ;
+; cnt_p[0]~7           ; 1        ;
+; cnt_p[5]~5COUT1_54   ; 1        ;
+; cnt_p[5]~5           ; 1        ;
+; cnt_p[4]~3COUT1_52   ; 1        ;
++----------------------+----------+
 
 
 +---------------------------------------------------+
@@ -477,30 +493,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------+----------------------+
 ; Interconnect Resource Type ; Usage                ;
 +----------------------------+----------------------+
-; C4s                        ; 9 / 2,870 ( < 1 % )  ;
+; C4s                        ; 19 / 2,870 ( < 1 % ) ;
 ; Direct links               ; 0 / 3,938 ( 0 % )    ;
-; Global clocks              ; 3 / 4 ( 75 % )       ;
-; LAB clocks                 ; 4 / 72 ( 6 % )       ;
-; LUT chains                 ; 0 / 1,143 ( 0 % )    ;
-; Local interconnects        ; 9 / 3,938 ( < 1 % )  ;
-; R4s                        ; 12 / 2,832 ( < 1 % ) ;
+; Global clocks              ; 1 / 4 ( 25 % )       ;
+; LAB clocks                 ; 2 / 72 ( 3 % )       ;
+; LUT chains                 ; 1 / 1,143 ( < 1 % )  ;
+; Local interconnects        ; 20 / 3,938 ( < 1 % ) ;
+; R4s                        ; 13 / 2,832 ( < 1 % ) ;
 +----------------------------+----------------------+
 
 
 +--------------------------------------------------------------------------+
 ; LAB Logic Elements                                                       ;
 +--------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 2.50) ; Number of LABs  (Total = 2) ;
+; Number of Logic Elements  (Average = 8.33) ; Number of LABs  (Total = 3) ;
 +--------------------------------------------+-----------------------------+
-; 1                                          ; 1                           ;
+; 1                                          ; 0                           ;
 ; 2                                          ; 0                           ;
 ; 3                                          ; 0                           ;
-; 4                                          ; 1                           ;
+; 4                                          ; 0                           ;
 ; 5                                          ; 0                           ;
 ; 6                                          ; 0                           ;
 ; 7                                          ; 0                           ;
-; 8                                          ; 0                           ;
-; 9                                          ; 0                           ;
+; 8                                          ; 2                           ;
+; 9                                          ; 1                           ;
 ; 10                                         ; 0                           ;
 +--------------------------------------------+-----------------------------+
 
@@ -508,50 +524,73 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------+
 ; LAB-wide Signals                                                 ;
 +------------------------------------+-----------------------------+
-; LAB-wide Signals  (Average = 1.50) ; Number of LABs  (Total = 2) ;
+; LAB-wide Signals  (Average = 1.67) ; Number of LABs  (Total = 3) ;
 +------------------------------------+-----------------------------+
-; 1 Async. clear                     ; 1                           ;
-; 1 Async. load                      ; 1                           ;
-; 1 Clock                            ; 1                           ;
+; 1 Clock                            ; 3                           ;
+; 1 Sync. clear                      ; 2                           ;
 +------------------------------------+-----------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 2.50) ; Number of LABs  (Total = 2) ;
+; Number of Signals Sourced  (Average = 8.67) ; Number of LABs  (Total = 3) ;
 +---------------------------------------------+-----------------------------+
 ; 0                                           ; 0                           ;
-; 1                                           ; 1                           ;
+; 1                                           ; 0                           ;
 ; 2                                           ; 0                           ;
 ; 3                                           ; 0                           ;
-; 4                                           ; 1                           ;
+; 4                                           ; 0                           ;
+; 5                                           ; 0                           ;
+; 6                                           ; 0                           ;
+; 7                                           ; 0                           ;
+; 8                                           ; 2                           ;
+; 9                                           ; 0                           ;
+; 10                                          ; 1                           ;
 +---------------------------------------------+-----------------------------+
 
 
 +-------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                       ;
 +-------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 2.50) ; Number of LABs  (Total = 2) ;
+; Number of Signals Sourced Out  (Average = 6.00) ; Number of LABs  (Total = 3) ;
 +-------------------------------------------------+-----------------------------+
 ; 0                                               ; 0                           ;
-; 1                                               ; 1                           ;
-; 2                                               ; 0                           ;
+; 1                                               ; 0                           ;
+; 2                                               ; 1                           ;
 ; 3                                               ; 0                           ;
-; 4                                               ; 1                           ;
+; 4                                               ; 0                           ;
+; 5                                               ; 0                           ;
+; 6                                               ; 0                           ;
+; 7                                               ; 0                           ;
+; 8                                               ; 2                           ;
 +-------------------------------------------------+-----------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 3.00) ; Number of LABs  (Total = 2) ;
+; Number of Distinct Inputs  (Average = 7.67) ; Number of LABs  (Total = 3) ;
 +---------------------------------------------+-----------------------------+
 ; 0                                           ; 0                           ;
 ; 1                                           ; 0                           ;
 ; 2                                           ; 1                           ;
-; 3                                           ; 0                           ;
-; 4                                           ; 1                           ;
+; 3                                           ; 1                           ;
+; 4                                           ; 0                           ;
+; 5                                           ; 0                           ;
+; 6                                           ; 0                           ;
+; 7                                           ; 0                           ;
+; 8                                           ; 0                           ;
+; 9                                           ; 0                           ;
+; 10                                          ; 0                           ;
+; 11                                          ; 0                           ;
+; 12                                          ; 0                           ;
+; 13                                          ; 0                           ;
+; 14                                          ; 0                           ;
+; 15                                          ; 0                           ;
+; 16                                          ; 0                           ;
+; 17                                          ; 0                           ;
+; 18                                          ; 1                           ;
 +---------------------------------------------+-----------------------------+
 
 
@@ -583,7 +622,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Thu Dec 28 12:06:58 2023
+    Info: Processing started: Thu Jan 04 11:02:33 2024
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off cpld_code -c cpld_code
 Info: Selected device EPM1270T144C5 for design "cpld_code"
 Info: Low junction temperature is 0 degrees C
@@ -596,14 +635,6 @@ Info: Device migration not selected. If you intend to use device migration later
     Info: Device EPM570T144A5 is compatible
     Info: Device EPM1270T144I5 is compatible
     Info: Device EPM1270T144A5 is compatible
-Critical Warning: No exact pin location assignment(s) for 7 pins of 8 total pins
-    Info: Pin q[0] not assigned to an exact location on the device
-    Info: Pin q[1] not assigned to an exact location on the device
-    Info: Pin q[2] not assigned to an exact location on the device
-    Info: Pin q[3] not assigned to an exact location on the device
-    Info: Pin serial_in not assigned to an exact location on the device
-    Info: Pin clr not assigned to an exact location on the device
-    Info: Pin pr not assigned to an exact location on the device
 Info: Timing-driven compilation is using the Classic Timing Analyzer
 Info: Timing requirements not specified -- optimizing circuit to achieve the following default global requirements
     Info: Assuming a global fmax requirement of 1000 MHz
@@ -614,9 +645,6 @@ Extra Info: Performing register packing on registers with non-logic cell locatio
 Extra Info: Completed register packing on registers with non-logic cell location assignments
 Info: Completed User Assigned Global Signals Promotion Operation
 Info: Automatically promoted signal "clk" to use Global clock in PIN 20
-Info: Automatically promoted some destinations of signal "pr" to use Global clock in PIN 18
-    Info: Destination "q[3]~0" may be non-global or may not use global clock
-Info: Automatically promoted signal "q[3]~0" to use Global clock
 Info: Completed Auto Global Promotion Operation
 Info: Starting register packing
 Info: Fitter is using Normal packing mode for logic elements with Auto setting for Auto Packed Registers logic option
@@ -625,48 +653,31 @@ Info: Started processing fast register assignments
 Info: Finished processing fast register assignments
 Extra Info: Finished moving registers into LUTs: elapsed time is 00:00:00
 Info: Finished register packing
-Info: Statistics of I/O pins that need to be placed that use the same VCCIO and VREF, before I/O pin placement
-    Info: Number of I/O pins in group: 6 (unused VREF, 3.3V VCCIO, 2 input, 4 output, 0 bidirectional)
-        Info: I/O standards used: 3.3-V LVTTL.
-Info: I/O bank details before I/O pin placement
-    Info: Statistics of I/O banks
-        Info: I/O bank number 1 does not use VREF pins and has undetermined VCCIO pins. 2 total pin(s) used --  24 pins available
-        Info: I/O bank number 2 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  30 pins available
-        Info: I/O bank number 3 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  30 pins available
-        Info: I/O bank number 4 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  30 pins available
-Warning: Ignored locations or region assignments to the following nodes
-    Warning: Node "scan" is assigned to location or region, but does not exist in design
-    Warning: Node "seg_out[0]" is assigned to location or region, but does not exist in design
-    Warning: Node "seg_out[1]" is assigned to location or region, but does not exist in design
-    Warning: Node "seg_out[2]" is assigned to location or region, but does not exist in design
-    Warning: Node "seg_out[3]" is assigned to location or region, but does not exist in design
-    Warning: Node "seg_out[4]" is assigned to location or region, but does not exist in design
-    Warning: Node "seg_out[5]" is assigned to location or region, but does not exist in design
-    Warning: Node "seg_out[6]" is assigned to location or region, but does not exist in design
-    Warning: Node "seg_out[7]" is assigned to location or region, but does not exist in design
-Info: Fitter preparation operations ending: elapsed time is 00:00:01
+Info: Fitter preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement preparation operations beginning
 Info: Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement operations beginning
 Info: Fitter placement was successful
 Info: Fitter placement operations ending: elapsed time is 00:00:00
-Info: Estimated most critical path is register to pin delay of 6.427 ns
-    Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LAB_X1_Y9; Fanout = 2; REG Node = 'q[2]~reg0'
-    Info: 2: + IC(4.105 ns) + CELL(2.322 ns) = 6.427 ns; Loc. = PIN_95; Fanout = 0; PIN Node = 'q[2]'
-    Info: Total cell delay = 2.322 ns ( 36.13 % )
-    Info: Total interconnect delay = 4.105 ns ( 63.87 % )
+Info: Estimated most critical path is register to register delay of 8.505 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LAB_X14_Y7; Fanout = 4; REG Node = 'cnt_p[8]'
+    Info: 2: + IC(2.278 ns) + CELL(0.200 ns) = 2.478 ns; Loc. = LAB_X13_Y8; Fanout = 1; COMB Node = 'LessThan0~3'
+    Info: 3: + IC(0.983 ns) + CELL(0.200 ns) = 3.661 ns; Loc. = LAB_X13_Y8; Fanout = 2; COMB Node = 'LessThan0~4'
+    Info: 4: + IC(0.983 ns) + CELL(0.200 ns) = 4.844 ns; Loc. = LAB_X13_Y8; Fanout = 16; COMB Node = 'LessThan0~5'
+    Info: 5: + IC(1.901 ns) + CELL(1.760 ns) = 8.505 ns; Loc. = LAB_X14_Y7; Fanout = 3; REG Node = 'cnt_p[15]'
+    Info: Total cell delay = 2.360 ns ( 27.75 % )
+    Info: Total interconnect delay = 6.145 ns ( 72.25 % )
 Info: Fitter routing operations beginning
 Info: Average interconnect usage is 0% of the available device resources
-    Info: Peak interconnect usage is 0% of the available device resources in the region that extends from location X0_Y0 to location X8_Y11
+    Info: Peak interconnect usage is 0% of the available device resources in the region that extends from location X9_Y0 to location X17_Y11
 Info: Fitter routing operations ending: elapsed time is 00:00:00
 Info: The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info: Optimizations that may affect the design's routability were skipped
     Info: Optimizations that may affect the design's timing were skipped
-Warning: Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
-Info: Quartus II Fitter was successful. 0 errors, 13 warnings
-    Info: Peak virtual memory: 252 megabytes
-    Info: Processing ended: Thu Dec 28 12:06:59 2023
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:00
+Info: Quartus II Fitter was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 253 megabytes
+    Info: Processing ended: Thu Jan 04 11:02:33 2024
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
 
 

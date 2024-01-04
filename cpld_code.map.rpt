@@ -1,5 +1,5 @@
 Analysis & Synthesis report for cpld_code
-Thu Dec 28 12:06:58 2023
+Thu Jan 04 11:02:32 2024
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -41,13 +41,13 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                               ;
 +-----------------------------+----------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Thu Dec 28 12:06:57 2023        ;
+; Analysis & Synthesis Status ; Successful - Thu Jan 04 11:02:32 2024        ;
 ; Quartus II Version          ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name               ; cpld_code                                    ;
 ; Top-level Entity Name       ; cpld_code                                    ;
 ; Family                      ; MAX II                                       ;
-; Total logic elements        ; 5                                            ;
-; Total pins                  ; 8                                            ;
+; Total logic elements        ; 26                                           ;
+; Total pins                  ; 4                                            ;
 ; Total virtual pins          ; 0                                            ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                                ;
 +-----------------------------+----------------------------------------------+
@@ -145,32 +145,33 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Total logic elements                        ; 5     ;
-;     -- Combinational with no register       ; 1     ;
-;     -- Register only                        ; 4     ;
-;     -- Combinational with a register        ; 0     ;
+; Total logic elements                        ; 26    ;
+;     -- Combinational with no register       ; 6     ;
+;     -- Register only                        ; 2     ;
+;     -- Combinational with a register        ; 18    ;
 ;                                             ;       ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- 2 input functions                    ; 1     ;
-;     -- 1 input functions                    ; 0     ;
+;     -- 4 input functions                    ; 5     ;
+;     -- 3 input functions                    ; 2     ;
+;     -- 2 input functions                    ; 15    ;
+;     -- 1 input functions                    ; 2     ;
 ;     -- 0 input functions                    ; 0     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 5     ;
-;     -- arithmetic mode                      ; 0     ;
+;     -- normal mode                          ; 11    ;
+;     -- arithmetic mode                      ; 15    ;
 ;     -- qfbk mode                            ; 0     ;
 ;     -- register cascade mode                ; 0     ;
-;     -- synchronous clear/load mode          ; 0     ;
-;     -- asynchronous clear/load mode         ; 4     ;
+;     -- synchronous clear/load mode          ; 16    ;
+;     -- asynchronous clear/load mode         ; 0     ;
 ;                                             ;       ;
-; Total registers                             ; 4     ;
-; I/O pins                                    ; 8     ;
-; Maximum fan-out node                        ; pr    ;
-; Maximum fan-out                             ; 5     ;
-; Total fan-out                               ; 22    ;
-; Average fan-out                             ; 1.69  ;
+; Total registers                             ; 20    ;
+; Total logic cells in carry chains           ; 16    ;
+; I/O pins                                    ; 4     ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 20    ;
+; Total fan-out                               ; 99    ;
+; Average fan-out                             ; 3.30  ;
 +---------------------------------------------+-------+
 
 
@@ -179,7 +180,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
-; |cpld_code                 ; 5 (5)       ; 4            ; 0          ; 8    ; 0            ; 1 (1)        ; 4 (4)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpld_code          ; work         ;
+; |cpld_code                 ; 26 (26)     ; 20           ; 0          ; 4    ; 0            ; 6 (6)        ; 2 (2)             ; 18 (18)          ; 16 (16)         ; 0 (0)      ; |cpld_code          ; work         ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -189,12 +190,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 4     ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 20    ;
+; Number of registers using Synchronous Clear  ; 16    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 4     ;
-; Number of registers using Asynchronous Load  ; 4     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 2     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -215,22 +216,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Thu Dec 28 12:06:56 2023
+    Info: Processing started: Thu Jan 04 11:02:31 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off cpld_code -c cpld_code
 Info: Found 2 design units, including 1 entities, in source file cpld_code.vhd
     Info: Found design unit 1: cpld_code-beh
     Info: Found entity 1: cpld_code
 Info: Elaborating entity "cpld_code" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at cpld_code.vhd(22): signal "pr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at cpld_code.vhd(25): signal "clr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Info: Implemented 13 device resources after synthesis - the final resource count might be different
-    Info: Implemented 4 input pins
-    Info: Implemented 4 output pins
-    Info: Implemented 5 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 236 megabytes
-    Info: Processing ended: Thu Dec 28 12:06:58 2023
-    Info: Elapsed time: 00:00:02
+Warning (10542): VHDL Variable Declaration warning at cpld_code.vhd(29): used initial value expression for variable "fo" because variable was never assigned a value
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "sw_gnd" is stuck at GND
+Info: Implemented 30 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 2 output pins
+    Info: Implemented 26 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 244 megabytes
+    Info: Processing ended: Thu Jan 04 11:02:32 2024
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 
